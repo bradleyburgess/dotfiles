@@ -1,0 +1,10 @@
+#!/bin/bash
+
+LYFILE=${1?Error: No file given}
+
+lilypond -ddelete-intermediate-files=#t --png -dresolution=1200 -danti-alias-factor=1 $LYFILE
+rm *.eps
+rm *.texi
+rm *.count
+rm *.pdf
+rm *.tex
