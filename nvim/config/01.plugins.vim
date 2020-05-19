@@ -5,6 +5,7 @@ call plug#begin("~/.vim/plugged")
     " Plug 'Yggdroot/indentLine'                       " Indent lines
     " Plug 'kien/ctrlp.vim'                            " Ctrl-P (like VS Code)
     Plug '~/.vim/plugged/code-dark_bb'
+    Plug 'itchyny/lightline.vim'
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-sensible'
     Plug 'tpope/vim-surround'
