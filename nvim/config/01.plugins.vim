@@ -8,4 +8,5 @@ call plug#begin("~/.vim/plugged")
     Plug 'tpope/vim-sensible'
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-repeat'
+    Plug 'sheerun/vim-polyglot'
 call plug#end()
