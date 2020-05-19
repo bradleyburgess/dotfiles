@@ -4,8 +4,9 @@
 "set mouse=a		" Enable mouse usage (all modes)
 filetype plugin indent on 
 set nocompatible	" Enable ViM features
-set encoding=utf-8  " UTF-8 encoding
 set autowrite		" Automatically save before commands like :next and :make
+set cursorline      " Highlight current line
+set encoding=utf-8  " UTF-8 encoding
 set hidden		    " Hide buffers when they are abandoned
 set number          " Absolute line numbers
 set relativenumber	" Relative line numbers
