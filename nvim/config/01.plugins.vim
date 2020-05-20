@@ -11,4 +11,12 @@ call plug#begin("~/.vim/plugged")
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-repeat'
     Plug 'sheerun/vim-polyglot'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    let g:coc_global_extensions = [
+            \'coc-emmet', 
+            \'coc-css', 
+            \'coc-html', 
+            \'coc-json', 
+            \'coc-prettier', 
+            \]
 call plug#end()
