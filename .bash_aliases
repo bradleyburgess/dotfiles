@@ -6,6 +6,7 @@
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+alias godotfiles='cd ~/dotfiles'
 
 # LS OPTIONS
 # ============================
