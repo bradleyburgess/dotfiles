@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-# From Corey Schafer's dotilfes
+# Modified from CoreyMSchafer/dotfiles
+# ==========================================================
 
 # Shell prompt based on the Solarized Dark theme.
 # Screenshot: http://i.imgur.com/EkEtphC.png
@@ -64,16 +65,17 @@ if tput setaf 1 &> /dev/null; then
 	bold=$(tput bold);
 	reset=$(tput sgr0);
 	# Solarized colors, taken from http://git.io/solarized-colors.
+	# Modified colors taken from vim-code-dark theme, via 8bit conversion
 	black=$(tput setaf 0);
-	blue=$(tput setaf 75);    #33
-	cyan=$(tput setaf 153);   #37
-	green=$(tput setaf 65);   #64
-	orange=$(tput setaf 173); #166
-	purple=$(tput setaf 175); #125
-	red=$(tput setaf 203);    #124
-	violet=$(tput setaf 60);  #61
+	blue=$(tput setaf 75);        # Original: 33
+	cyan=$(tput setaf 153);       # Original: 37
+	green=$(tput setaf 65);       # Original: 64
+	orange=$(tput setaf 173);     # Original: 166
+	purple=$(tput setaf 175);     # Original: 125
+	red=$(tput setaf 203);        # Original: 124
+	violet=$(tput setaf 60);      # Original: 61
 	white=$(tput setaf 15);
-	yellow=$(tput setaf 187); #136
+	yellow=$(tput setaf 187);     # Original: 136
 else
 	bold='';
 	reset="\e[0m";
