@@ -25,7 +25,8 @@ alias gc='git commit '        # Commit
 alias gco='git checkout '     # Checkout
 alias gd='git diff '          # Diff
 alias gl='git log --oneline'  # Log (oneline)
-alias gp='git push '          # Push
+alias gpull='git pull '       # Pull
+alias gpush='git push '       # Push
 alias gs='git status '        # Status
 
 # SYS TOOLS
