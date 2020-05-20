@@ -1,0 +1,22 @@
+#!/bin/bash
+# BASH aliases and variables for debbox
+
+# ENVIRONMENT VARIABLES
+export PLEX="/mnt/storage/plexmedia"
+export PATH="$PATH:$HOME/docker:$HOME/.local/bin:$HOME/dotfiles:$HOME/dotfiles/scripts"
+
+# ALIASES: General
+alias dropbox='docker exec -it dropbox_personal dropbox'
+alias shutdown='sudo systemctl shutdown'
+
+# ALIASES: AppImages
+alias gimp="~/bin/appimage/GIMP_AppImage-release-2.10.18-withplugins-x86_64.AppImage"
+alias musescore="~/bin/appimage/musescore-x86_64.AppImage"
+alias nvim='~/bin/appimage/nvim.appimage'
+alias reboot='sudo systemctl reboot'
+alias shotcut="~/bin/appimage/Shotcut-200412.glibc2.14-x86_64.AppImage"
+
+# ALIASES: ESUMC
+alias dropboxesumc='docker exec -it dropbox_esumc dropbox'
+alias gobulletin="cd $(ls -d ~/Documents/esumc/bulletin-web/* | grep -P '\d{4}' | sort -r | head -n 1)"
+alias gohymns="cd ~/Documents/esumc/hymns"

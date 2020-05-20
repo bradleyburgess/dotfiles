@@ -1,0 +1,6 @@
+#!/bin/bash
+# BASH aliases and variables for OrganLaptop
+
+# ALIASES: ESUMC
+alias gobulletin="cd $(ls -d ~/Documents/esumc/bulletin-web/* | grep -P '\d{4}' | sort -r | head -n 1)"
+alias gohymns="cd ~/Documents/esumc/hymns"
