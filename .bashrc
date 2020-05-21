@@ -22,8 +22,12 @@ shopt -s globstar                      # "**" path expansion
 set -o vi                              # vi keybindings for bash
 source ~/dotfiles/.bash_aliases        # Source global aliases
 source ~/dotfiles/.bash_prompt         # Set prompt
-source ~/dotfiles/.bash_$HOSTNAME      # Source machine-specific settings
 source ~/dotfiles/git-completion.bash  # Enable git bash completion
+
+# Source machine-specific settings
+if [ -f ~/dotfiles/.bash_$HOSTNAME ]; then
+    . ~/dotfiles/.bash_$HOSTNAME
+fi
 
 # Enable programmable completion features 
 if ! shopt -oq posix; then
