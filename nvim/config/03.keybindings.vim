@@ -46,6 +46,7 @@ inoremap <silent><expr> <c-space> coc#refresh()
 
 " COC: Use <CR> to confirm completion, OR Expand 
 inoremap <expr> <CR> 
-      \ pumvisible() ? "\<C-y>" : 
+      \ pumvisible() ? coc#_select_confirm() : 
       \ Expander() 
-" Was \<C-g>u\<CR>"
+      " \<C-g>u\<CR>"
+      " "\ pumvisible() ? "\<C-y>" : 
