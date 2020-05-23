@@ -9,7 +9,7 @@ set cursorline      " Highlight current line
 set encoding=utf-8  " UTF-8 encoding
 set hidden		    " Hide buffers when they are abandoned
 set number          " Absolute line numbers
-set relativenumber	" Relative line numbers
+set norelativenumber	" Relative line numbers
 set showcmd		    " Show (partial) command in status line.
 set showmatch		" Show matching brackets.
 syntax on
@@ -28,23 +28,23 @@ set smartcase		" Do smart case matching
 set autoindent
 set copyindent      " copy indent from the previous line
 set expandtab       " tabs are space
-set shiftwidth=4    " number of spaces to use for autoindent
-set softtabstop=4   " number of spaces in tab when editing
-set tabstop=4       " number of visual spaces per TAB
+set shiftwidth=2    " number of spaces to use for autoindent
+set softtabstop=2   " number of spaces in tab when editing
+set tabstop=2       " number of visual spaces per TAB
 
 " ===================================================================
 " COLORS
 " ===================================================================
 " Terminal color fallback
 if (has("termguicolors"))
-	set termguicolors
+  set termguicolors
 endif
 colorscheme codedark
 
 " ===================================================================
 " KEYBINDINGS
 " ===================================================================
- inoremap jk <ESC>
+" inoremap jk <ESC>
 
 " ===================================================================
 " MISCELLANEOUS
