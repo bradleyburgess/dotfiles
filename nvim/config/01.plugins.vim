@@ -1,17 +1,20 @@
 call plug#begin("~/.vim/plugged")
-  " Plug 'Yggdroot/indentLine'                       " Indent lines
-  " Plug 'dracula/vim', { 'as': 'dracula' }          " Dracula theme
-  " Plug 'kien/ctrlp.vim'                            " Ctrl-P (like VS Code)
-  " Plug 'tomasiser/vim-code-dark'                   " VS Code dark theme
-  Plug 'itchyny/lightline.vim'                       " Lightline bar
-  Plug 'junegunn/fzf.vim'                            " Fuzzy Finder
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}    " COC Completion
-  Plug 'sheerun/vim-polyglot'                        " Language packs
-  Plug 'tpope/vim-commentary'                        " Add comments
-  Plug 'tpope/vim-repeat'                            " Extended repeat func
-  Plug 'tpope/vim-sensible'                          " Sensible defaults
-  Plug 'tpope/vim-surround'                          " Surround
-  Plug '~/.vim/plugged/code-dark_bb'                 " Forked VS Code theme
+  " Plug 'Yggdroot/indentLine'                         " Indent lines
+  " Plug 'dracula/vim', { 'as': 'dracula' }            " Dracula theme
+  " Plug 'kien/ctrlp.vim'                              " Ctrl-P (like VS Code)
+  " Plug 'tomasiser/vim-code-dark'                     " VS Code dark theme
+  Plug 'itchyny/lightline.vim'                         " Lightline bar
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  " Fuzzy Finder
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}      " COC Completion
+  Plug 'sheerun/vim-polyglot'                          " Language packs
+  Plug 'tpope/vim-commentary'                          " Add comments
+  Plug 'tpope/vim-repeat'                              " Extended repeat func
+  Plug 'tpope/vim-sensible'                            " Sensible defaults
+  Plug 'tpope/vim-surround'                            " Surround
+  Plug '~/.vim/plugged/code-dark_bb'                   " Forked VS Code theme
+  Plug 'preservim/nerdtree'                            " NERDtree
+  Plug 'cakebaker/scss-syntax.vim'                     " Sass
+
   " Coc extensions:
   let g:coc_global_extensions = [
         \'coc-emmet', 
