@@ -13,6 +13,12 @@ alias godotfiles='cd ~/dotfiles'
 alias ll='ls -lah'
 alias l='ls -lah'
 
+# GREP
+# ============================
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
 # TMUX
 # ============================
 alias tma='tmux attach -t'
