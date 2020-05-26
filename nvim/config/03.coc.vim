@@ -27,6 +27,9 @@ function! Expander()
   endif
 endfunction
 
+" Create :Prettier command
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
 " BINDINGS
 " =================================================
 
@@ -48,3 +51,7 @@ inoremap <expr> <CR>
       \ Expander() 
       " \<C-g>u\<CR>"
       " "\ pumvisible() ? "\<C-y>" : 
+
+" Prettier
+nmap <leader>p :Prettier<CR>
+vmap <leader>p  <Plug>(coc-format-selected)
