@@ -8,3 +8,6 @@ alias gohome="cd /mnt/c/Users/bburgess"
 alias godeblocal='ssh deblocal'
 alias godebremote='ssh debremote'
 alias nvim='~/bin/neovim/usr/bin/nvim'
+
+# PATH
+export PATH=$PATH:~/.local/bin
