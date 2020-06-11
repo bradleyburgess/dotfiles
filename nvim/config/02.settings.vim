@@ -5,6 +5,7 @@
 filetype plugin indent on 
 set autowrite		" Automatically save before commands like :next and :make
 set cursorline      " Highlight current line
+set cursorcolumn    " Highlight current column
 set encoding=utf-8  " UTF-8 encoding
 set hidden		    " Hide buffers when they are abandoned
 set nocompatible	" Enable ViM features
