@@ -17,6 +17,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'jiangmiao/auto-pairs'                          " Auto pairs
   Plug 'evidens/vim-twig'                              " Twig language
   Plug 'ryanoasis/vim-devicons'                        " NERD icons
+  Plug 'wlemuel/vim-tldr'
 
   " Coc extensions:
   let g:coc_global_extensions = [
