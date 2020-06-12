@@ -47,6 +47,8 @@ colorscheme codedark
 " KEYBINDINGS
 " ===================================================================
 " inoremap jk <ESC>
+nnoremap <silent> <S-PageUp> :-tabmove<CR>
+nnoremap <silent> <S-PageDown> :+tabmove<CR>
 
 " ===================================================================
 " MISCELLANEOUS
