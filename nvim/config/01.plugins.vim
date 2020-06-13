@@ -5,6 +5,7 @@ call plug#begin("~/.vim/plugged")
   " Plug 'tomasiser/vim-code-dark'                     " VS Code dark theme
   Plug 'itchyny/lightline.vim'                         " Lightline bar
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  " Fuzzy Finder
+  Plug 'junegunn/fzf.vim'                              " Fuzzy Finder
   Plug 'neoclide/coc.nvim', {'branch': 'release'}      " COC Completion
   Plug 'sheerun/vim-polyglot'                          " Language packs
   Plug 'tpope/vim-commentary'                          " Comments

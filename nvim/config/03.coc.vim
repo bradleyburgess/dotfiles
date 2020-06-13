@@ -55,3 +55,6 @@ inoremap <expr> <CR>
 " Prettier
 nmap <leader>p :Prettier<CR>
 vmap <leader>p  <Plug>(coc-format-selected)
+
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gr <Plug>(coc-references)
