@@ -2,8 +2,9 @@
 # BASH aliases and variables for debbox
 
 # ENVIRONMENT VARIABLES
-export PLEX="/mnt/storage/plexmedia"
+export EDITOR="/home/bradley/bin/appimage/nvim.appimage"
 export PATH="$PATH:$HOME/docker:$HOME/.local/bin:$HOME/dotfiles:$HOME/dotfiles/scripts"
+export PLEX="/mnt/storage/plexmedia"
 
 # ALIASES: General
 alias dropbox='docker exec -it dropbox_personal dropbox'
