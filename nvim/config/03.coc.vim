@@ -56,5 +56,6 @@ inoremap <expr> <CR>
 nmap <leader>p :Prettier<CR>
 vmap <leader>p  <Plug>(coc-format-selected)
 
+" GO: Definitions / References
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
