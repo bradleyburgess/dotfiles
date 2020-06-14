@@ -1,6 +1,5 @@
 call plug#begin("~/.vim/plugged")
   " UNUSED
-  " Plug 'Yggdroot/indentLine'                         " Indent lines
   " Plug 'dracula/vim', { 'as': 'dracula' }            " Dracula theme
   " Plug 'kien/ctrlp.vim'                              " Ctrl-P (like VS Code)
   " Plug 'tomasiser/vim-code-dark'                     " VS Code dark theme
@@ -15,6 +14,7 @@ call plug#begin("~/.vim/plugged")
   Plug '~/.vim/plugged/code-dark_bb'                   " Forked VS Code theme
   Plug 'morhetz/gruvbox'                               " Gruvbox
   Plug 'itchyny/lightline.vim'                         " Lightline bar
+  Plug 'Yggdroot/indentLine'                           " Indent lines
 
   " LANGUAGE PACKS
   Plug 'cakebaker/scss-syntax.vim'                     " Sass
