@@ -1,25 +1,44 @@
+" VIM PLUGINS
+" ============================================================================
+
 call plug#begin("~/.vim/plugged")
-  " Plug 'Yggdroot/indentLine'                         " Indent lines
+  " UNUSED
   " Plug 'dracula/vim', { 'as': 'dracula' }            " Dracula theme
   " Plug 'kien/ctrlp.vim'                              " Ctrl-P (like VS Code)
   " Plug 'tomasiser/vim-code-dark'                     " VS Code dark theme
+  " Plug 'tpope/vim-sensible'                          " Sensible defaults
+  
+  " GENERAL
+  Plug 'mbbill/undotree'                               " Undo tree
+  Plug 'vim-utils/vim-man'                             " Vim manpage
+  Plug 'wlemuel/vim-tldr'                              " TLDR for Vim
+  Plug 'airblade/vim-rooter'                           " Project-based search
+
+  " THEMES / UI
+  Plug '~/.vim/plugged/code-dark_bb'                   " Forked VS Code theme
+  Plug 'morhetz/gruvbox'                               " Gruvbox
   Plug 'itchyny/lightline.vim'                         " Lightline bar
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  " Fuzzy Finder
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}      " COC Completion
+  Plug 'Yggdroot/indentLine'                           " Indent lines
+
+  " LANGUAGE PACKS
+  Plug 'cakebaker/scss-syntax.vim'                     " Sass
+  Plug 'evidens/vim-twig'                              " Twig language
   Plug 'sheerun/vim-polyglot'                          " Language packs
+
+  " AUTOCOMPLETE ETC
+  Plug 'jiangmiao/auto-pairs'                          " Auto pairs
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}      " COC Completion
   Plug 'tpope/vim-commentary'                          " Comments
   Plug 'tpope/vim-repeat'                              " Extended repeat func
-  Plug 'tpope/vim-sensible'                            " Sensible defaults
   Plug 'tpope/vim-surround'                            " Surround
-  Plug '~/.vim/plugged/code-dark_bb'                   " Forked VS Code theme
-  Plug 'preservim/nerdtree'                            " NERDtree
-  Plug 'cakebaker/scss-syntax.vim'                     " Sass
-  Plug 'jiangmiao/auto-pairs'                          " Auto pairs
-  Plug 'evidens/vim-twig'                              " Twig language
-  Plug 'ryanoasis/vim-devicons'                        " NERD icons
-  Plug 'wlemuel/vim-tldr'
 
-  " Coc extensions:
+  " FILE MANAGEMENT
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  " Fuzzy Finder
+  Plug 'junegunn/fzf.vim'                              " FZF
+  Plug 'preservim/nerdtree'                            " NERDtree
+  Plug 'ryanoasis/vim-devicons'                        " NERD icons
+
+  " COC EXTENSIONS:
   let g:coc_global_extensions = [
         \'coc-emmet', 
         \'coc-eslint',
