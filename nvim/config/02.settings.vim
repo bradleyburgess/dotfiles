@@ -14,8 +14,8 @@ set norelativenumber	     " Relative line numbers
 set number                 " Absolute line numbers
 set showcmd		             " Show (partial) command in status line.
 set showmatch		           " Show matching brackets.
-set splitbelow             " spawn horizontal splits below instead of above"
-set splitright             " spawn vertical splits to the right instead of left"
+set splitbelow             " spawn horizontal splits below instead of above
+set splitright             " spawn vertical splits to the right instead of left
 set noerrorbells           " No sounds
 set nobackup               " No backup
 set undodir=~/.vim/undodir " Undo Directory
