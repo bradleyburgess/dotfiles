@@ -45,6 +45,7 @@ alias update='sudo apt-get update && sudo apt-get upgrade'
 # GENERAL APPS
 # ============================
 alias getweather='curl wttr.in'
+alias r="ranger"
 
 # OTHER IDEAS
 # ============================
