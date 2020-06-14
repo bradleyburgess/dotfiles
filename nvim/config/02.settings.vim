@@ -50,6 +50,11 @@ endif
 colorscheme codedark
 
 " ===================================================================
+" MISCELLANEOUS
+" ===================================================================
+let g:vim_json_conceal=0          " Fix indentLine JSON quotes
+
+" ===================================================================
 " KEYBINDINGS
 " ===================================================================
 " Leader key
@@ -62,8 +67,8 @@ let mapleader = " "
 nnoremap <silent> <S-PageUp> :-tabmove<CR>
 nnoremap <silent> <S-PageDown> :+tabmove<CR>
 
-" ===================================================================
-" MISCELLANEOUS
-" ===================================================================
-let g:vim_json_conceal=0          " Fix indentLine JSON quotes
-
+" Navigating splits using ViM movements
+nnoremap <silent> <C-H> <C-W><C-H>
+nnoremap <silent> <C-J> <C-W><C-J>
+nnoremap <silent> <C-K> <C-W><C-K>
+nnoremap <silent> <C-L> <C-W><C-L>
