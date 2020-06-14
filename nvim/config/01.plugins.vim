@@ -1,3 +1,6 @@
+" VIM PLUGINS
+" ============================================================================
+
 call plug#begin("~/.vim/plugged")
   " UNUSED
   " Plug 'dracula/vim', { 'as': 'dracula' }            " Dracula theme
@@ -9,6 +12,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'mbbill/undotree'                               " Undo tree
   Plug 'vim-utils/vim-man'                             " Vim manpage
   Plug 'wlemuel/vim-tldr'                              " TLDR for Vim
+  Plug 'airblade/vim-rooter'                           " Project-based search
 
   " THEMES / UI
   Plug '~/.vim/plugged/code-dark_bb'                   " Forked VS Code theme
