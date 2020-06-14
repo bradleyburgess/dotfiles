@@ -10,9 +10,9 @@ esac
 
 
 
-# ===========================================
+# ============================================================================
 # GENERAL
-# ===========================================
+# ============================================================================
 HISTCONTROL=ignoreboth                 # History: no duplicates / blank starts
 shopt -s histappend                    # Append to history; don't overwrite
 HISTSIZE=1000                          # History length
@@ -20,14 +20,6 @@ HISTFILESIZE=2000                      # History size
 shopt -s checkwinsize                  # Check terminal resize
 shopt -s globstar                      # "**" path expansion
 set -o vi                              # vi keybindings for bash
-source ~/dotfiles/.bash_aliases        # Source global aliases
-source ~/dotfiles/.bash_prompt         # Set prompt
-source ~/dotfiles/git-completion.bash  # Enable git bash completion
-
-# Source machine-specific settings
-if [ -f ~/dotfiles/.bash_$HOSTNAME ]; then
-    . ~/dotfiles/.bash_$HOSTNAME
-fi
 
 # Enable programmable completion features 
 if ! shopt -oq posix; then
@@ -87,3 +79,21 @@ export NVM_DIR="$HOME/.nvm"
 # fi
 # unset color_prompt force_color_prompt
 
+
+
+
+
+# ===========================================
+# SOURCE BASH CONFIGS
+# ===========================================
+source ~/dotfiles/.bash_aliases        # Source global aliases
+source ~/dotfiles/.bash_prompt         # Set prompt
+source ~/dotfiles/git-completion.bash  # Enable git bash completion
+
+# Source machine-specific settings
+if [ -f ~/dotfiles/.bash_$HOSTNAME ]; then
+    . ~/dotfiles/.bash_$HOSTNAME
+fi
+
+# Source FZF config
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
