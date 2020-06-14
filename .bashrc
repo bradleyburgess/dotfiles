@@ -80,8 +80,6 @@ export NVM_DIR="$HOME/.nvm"
 # unset color_prompt force_color_prompt
 
 
-<<<<<<< HEAD
-=======
 
 
 
