@@ -72,3 +72,7 @@ nnoremap <silent> <C-H> <C-W><C-H>
 nnoremap <silent> <C-J> <C-W><C-J>
 nnoremap <silent> <C-K> <C-W><C-K>
 nnoremap <silent> <C-L> <C-W><C-L>
+
+" Quick insert blank line witout leaving normal mode
+nnoremap <Leader>o o<Esc>
+nnoremap <Leader>O O<Esc>
