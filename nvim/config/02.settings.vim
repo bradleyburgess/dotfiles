@@ -60,15 +60,23 @@ let g:vim_json_conceal=0          " Fix indentLine JSON quotes
 " Leader key
 let mapleader = " "
 
-" Quick escape out of insert
-" inoremap jk <ESC>
-
 " Move tabs
 nnoremap <silent> <S-PageUp> :-tabmove<CR>
 nnoremap <silent> <S-PageDown> :+tabmove<CR>
 
 " Navigating splits using ViM movements
-nnoremap <silent> <C-H> <C-W><C-H>
-nnoremap <silent> <C-J> <C-W><C-J>
-nnoremap <silent> <C-K> <C-W><C-K>
-nnoremap <silent> <C-L> <C-W><C-L>
+nnoremap <silent> <leader>h <C-W><C-H>
+nnoremap <silent> <leader>j <C-W><C-J>
+nnoremap <silent> <leader>k <C-W><C-K>
+nnoremap <silent> <leader>l <C-W><C-L>
+
+" Quick insert blank line witout leaving normal mode
+nnoremap <Leader>o o<Esc>0D
+nnoremap <Leader>O O<Esc>0D
+
+" Clear search highlight (:noh)
+nnoremap <silent> <C-L> :noh<CR>
+
+" Ctrl-/ to comment / uncomment
+nnoremap <C-_> :Commentary<CR>
+vnoremap <C-_> :Commentary<CR>
