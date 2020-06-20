@@ -1,26 +1,30 @@
 " ===================================================================
 " GENERAL
 " ===================================================================
-"set mouse=a		           " Enable mouse usage (all modes)
 filetype plugin indent on 
 set autowrite		           " Auto save before commands like :next and :make
+set encoding=utf-8         " UTF-8 encoding
+set hidden		             " Hide buffers when they are abandoned
+set nobackup               " No backup
+set nocompatible	         " Enable ViM features
+set noerrorbells           " No sounds
+set undodir=~/.vim/undodir " Undo Directory
+set undofile
+syntax on
+
+" ===================================================================
+" INTERFACE (highlights, splits, numbers, etc.)
+" ===================================================================
 set colorcolumn=80         " Highlight 80th column
 set cursorcolumn           " Highlight current column
 set cursorline             " Highlight current line
-set encoding=utf-8         " UTF-8 encoding
-set hidden		             " Hide buffers when they are abandoned
-set nocompatible	         " Enable ViM features
-set norelativenumber	     " Relative line numbers
+set norelativenumber	     " No Relative line numbers
+set nowrap                 " No wrap by default
 set number                 " Absolute line numbers
 set showcmd		             " Show (partial) command in status line.
 set showmatch		           " Show matching brackets.
 set splitbelow             " spawn horizontal splits below instead of above
 set splitright             " spawn vertical splits to the right instead of left
-set noerrorbells           " No sounds
-set nobackup               " No backup
-set undodir=~/.vim/undodir " Undo Directory
-set undofile
-syntax on
 
 " ===================================================================
 " SEARCH
