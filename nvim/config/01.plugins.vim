@@ -19,6 +19,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'Yggdroot/indentLine'                            " Indent lines
   Plug 'itchyny/lightline.vim'                          " Lightline bar
   Plug 'morhetz/gruvbox'                                " Gruvbox
+  Plug 'shinchu/lightline-gruvbox.vim'                  " Lightline gruvbox
 
   " LANGUAGE PACKS
   Plug 'cakebaker/scss-syntax.vim'                      " Sass
