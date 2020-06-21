@@ -41,6 +41,8 @@ alias gs='git status '        # Status
 alias pip3='python3 -m pip'
 alias publicip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias update='sudo apt-get update && sudo apt-get upgrade'
+alias reboot='sudo systemctl reboot'
+alias shutdown='sudo systemctl shutdown'
 
 # GENERAL APPS
 # ============================
