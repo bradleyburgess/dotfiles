@@ -89,6 +89,7 @@ export NVM_DIR="$HOME/.nvm"
 source ~/dotfiles/.bash_aliases        # Source global aliases
 source ~/dotfiles/.bash_prompt         # Set prompt
 source ~/dotfiles/git-completion.bash  # Enable git bash completion
+source ~/dotfiles/tmux-completion.bash # Enable tmux bash completion
 
 # Source machine-specific settings
 if [ -f ~/dotfiles/.bash_$HOSTNAME ]; then
