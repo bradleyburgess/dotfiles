@@ -91,10 +91,10 @@ source ~/dotfiles/.bash_prompt         # Set prompt
 source ~/dotfiles/git-completion.bash  # Enable git bash completion
 source ~/dotfiles/tmux-completion.bash # Enable tmux bash completion
 
+# Source FZF config
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 # Source machine-specific settings
 if [ -f ~/dotfiles/.bash_$HOSTNAME ]; then
     . ~/dotfiles/.bash_$HOSTNAME
 fi
-
-# Source FZF config
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
