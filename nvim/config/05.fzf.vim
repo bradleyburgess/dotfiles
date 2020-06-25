@@ -8,6 +8,8 @@ let g:fzf_action = {
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit'
   \}
+" Ripgrep
+nnoremap <leader>rg :Rg<CR>
 
 " SETTINGS
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'     " Ignore Node Modules
