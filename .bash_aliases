@@ -48,6 +48,7 @@ alias shutdown='sudo systemctl shutdown'
 # ============================
 alias getweather='curl wttr.in'
 alias r="ranger"
+alias gtypist="gtypist -s"
 
 # OTHER IDEAS
 # ============================
