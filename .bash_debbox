@@ -9,7 +9,7 @@ export PLEX="/mnt/storage/plexmedia"
 # ALIASES: General
 alias dropbox='docker exec -it dropbox_personal dropbox'
 alias shutdown='sudo systemctl shutdown'
-alias gobujo='cd ~/Documents/bujo'
+alias gobj='cd ~/Documents/bujo'
 
 # ALIASES: AppImages
 alias gimp="~/bin/appimage/GIMP_AppImage-release-2.10.18-withplugins-x86_64.AppImage"
