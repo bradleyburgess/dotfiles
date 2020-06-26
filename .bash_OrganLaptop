@@ -8,6 +8,7 @@ alias gohome="cd /mnt/c/Users/bburgess"
 alias godeblocal='ssh deblocal'
 alias godebremote='ssh debremote'
 alias nvim='~/bin/neovim/usr/bin/nvim'
+alias syncthing='~/bin/syncthing-windows-amd64-v1.6.1/syncthing.exe'
 
 # PATH
 export PATH=$PATH:~/.local/bin
