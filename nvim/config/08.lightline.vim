@@ -1,5 +1,5 @@
 let g:lightline = {
-      \ 'colorscheme': 'darcula',
+      \ 'colorscheme': 'gruvbox',
       \ 'component_function': {
       \   'filename': 'FilenameForLightline'
       \ }
