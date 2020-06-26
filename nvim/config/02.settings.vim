@@ -51,7 +51,7 @@ set tabstop=2       " number of visual spaces per TAB
 if (has("termguicolors"))
   set termguicolors
 endif
-colorscheme codedark
+colorscheme gruvbox
 
 " ===================================================================
 " MISCELLANEOUS
