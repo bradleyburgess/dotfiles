@@ -78,6 +78,14 @@ nnoremap <silent> <leader>l <C-W><C-L>
 nnoremap <Leader>o o<Esc>0D
 nnoremap <Leader>O O<Esc>0D
 
+" Center next search results
+nnoremap n nzz
+nnoremap N Nzz
+
+" Center { and } paragraph navigation
+nnoremap { {zz
+nnoremap } }zz
+
 " Clear search highlight (:noh)
 nnoremap <silent> <C-L> :noh<CR>
 
