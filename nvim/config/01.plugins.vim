@@ -18,7 +18,7 @@ call plug#begin("~/.vim/plugged")
   Plug '~/.vim/plugged/code-dark_bb'                    " Forked VS Code theme
   Plug 'Yggdroot/indentLine'                            " Indent lines
   Plug 'itchyny/lightline.vim'                          " Lightline bar
-  Plug 'morhetz/gruvbox'                                " Gruvbox
+  Plug 'gruvbox-community/gruvbox'                      " Gruvbox (community)
   Plug 'shinchu/lightline-gruvbox.vim'                  " Lightline gruvbox
 
   " LANGUAGE PACKS
