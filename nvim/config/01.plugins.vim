@@ -24,7 +24,14 @@ call plug#begin("~/.vim/plugged")
   " LANGUAGE PACKS
   Plug 'cakebaker/scss-syntax.vim'                      " Sass
   Plug 'evidens/vim-twig'                               " Twig language
+  Plug 'ianks/vim-tsx'
+  Plug 'jparise/vim-graphql'
+  Plug 'leafgarland/typescript-vim'
+  Plug 'maxmellon/vim-jsx-pretty'
+  Plug 'pangloss/vim-javascript'
+  Plug 'peitalin/vim-jsx-typescript'
   Plug 'sheerun/vim-polyglot'                           " Language packs
+  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
   " AUTOCOMPLETE ETC
   Plug 'jiangmiao/auto-pairs'                           " Auto pairs
