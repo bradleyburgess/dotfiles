@@ -67,6 +67,23 @@ endif
 let g:vim_json_conceal=0          " Fix indentLine JSON quotes
 
 " ===================================================================
+" AUTOCMD
+" ===================================================================
+" When entering JS files, rescan buffers for syntax
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+
+" Read typescript files
+au BufNewFile,BufRead *.ts setlocal filetype=typescript
+au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
+
+" Read all JS as JSX
+augroup filetype_jsx
+    autocmd!
+    autocmd FileType javascript set filetype=javascriptreact
+augroup END
+
+" ===================================================================
 " KEYBINDINGS
 " ===================================================================
 " Leader key
