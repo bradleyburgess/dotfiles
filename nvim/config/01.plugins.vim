@@ -39,6 +39,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'tpope/vim-commentary'                           " Comments
   Plug 'tpope/vim-repeat'                               " Extended repeat func
   Plug 'tpope/vim-surround'                             " Surround
+" Plug 'honza/vim-snippets'                             " Snippets
 
   " FILE MANAGEMENT
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }   " Fuzzy Finder
