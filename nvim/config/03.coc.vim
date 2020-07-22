@@ -18,12 +18,12 @@ function! Expander()
   let third  = line[col]
   if first ==# ">"
     if second ==# "<" && third ==# "/"
-      return "\<CR>\<C-o>==\<C-o>O"
+      return "\<C-g>u\<CR>\<C-o>==\<C-o>O"
     else
-      return "\<CR>"
+      return "\<C-g>u\<CR>"
     endif
   else
-    return "\<CR>"
+    return "\<C-g>u\<CR>"
   endif
 endfunction
 
@@ -54,7 +54,7 @@ inoremap <expr> <CR>
 
 " Prettier
 nmap <leader>p :Prettier<CR>
-vmap <leader>p  <Plug>(coc-format-selected)
+vmap <leader>p <Plug>(coc-format-selected)
 
 " GO: Definitions / References
 nmap <leader>gd <Plug>(coc-definition)
