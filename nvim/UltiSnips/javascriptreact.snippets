@@ -1,0 +1,65 @@
+snippet arw "JS arrow function" i
+($1) => ${2:{$0\}}
+endsnippet
+
+snippet arwc "JS arrow const" b
+const $1 = ($2) => ${3:{$0\}}
+endsnippet
+
+snippet i "React import" b
+import $1 from "$2"
+$0
+endsnippet
+
+snippet rfc "React Functional Component" b
+import React from "react"
+${1:import $2 from "$3"}
+
+const `!p snip.rv = snip.basename` = ($4) => {
+  $5
+  return (
+    $0
+  )
+}
+
+export default `!p snip.rv = snip.basename`
+endsnippet
+
+snippet rsc "React Stateful Component" b
+import React from "react"
+${1:import $2 from "$3"}
+
+class `!p snip.rv = snip.basename` extends React.Component {
+	${4:state = {
+	  $5
+	\}}
+
+  render() {
+    $6
+			return (
+        $0
+      )
+  }
+}
+
+export default `!p snip.rv = snip.basename`
+endsnippet
+
+snippet router "React Router" b
+<BrowserRouter>
+  <div className="App">
+    <Switch>
+      ${1:<Route ${2:exact }path="${3:/}" component={${4:Home}} />}
+      <Route path="/${5:path}" component={${0:Component}} />
+    </Switch>
+  </div>
+</BrowserRouter>
+endsnippet
+
+snippet route "React Route" b
+<Route path="/${1:path}" component={${0:Component}} />
+endsnippet
+
+snippet Link "Router Link" b
+<Link to={${1:link}>${2:text}</Link>$0
+endsnippet
