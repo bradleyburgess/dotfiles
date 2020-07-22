@@ -43,6 +43,7 @@ set expandtab       " tabs are space
 set shiftwidth=2    " number of spaces to use for autoindent
 set softtabstop=2   " number of spaces in tab when editing
 set tabstop=2       " number of visual spaces per TAB
+set textwidth=80    " Default to textwidth of 80
 
 " ===================================================================
 " COLORS
@@ -64,14 +65,17 @@ endif
 " ===================================================================
 " MISCELLANEOUS
 " ===================================================================
-let g:vim_json_conceal=0          " Fix indentLine JSON quotes
+let g:vim_json_conceal=0                        " Fix indentLine JSON quotes
+let g:vim_markdown_conceal = 0                  " Disable conceal for markdown
+let g:vim_markdown_conceal_code_blocks = 0
+let g:vim_markdown_conceal_links = 0
 
 " ===================================================================
 " AUTOCMD
 " ===================================================================
 " When entering JS files, rescan buffers for syntax
-autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
-autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+au BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+au BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
 " Read typescript files
 au BufNewFile,BufRead *.ts setlocal filetype=typescript
