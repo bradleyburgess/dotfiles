@@ -1,13 +1,43 @@
 priority -50
 
-snippet cf "Codeblock" b
-\`\`\`$1
-$0
-\`\`\`
+snippet tb2 "New Table: 2 cols"
+|  $0                                    |                                     |
+|--------------------------------------|-------------------------------------|
+|                                      |                                     |
+endsnippet
+
+snippet tb3 "New Table: 3 cols"
+|  $0                      |                         |                         |
+|------------------------|-------------------------|-------------------------|
+|                        |                         |                         |
+endsnippet
+
+snippet tb4 "New Table: 4 cols"
+|  $0                |                  |                  |                  |
+|------------------|------------------|------------------|------------------|
+|                  |                  |                  |                  |
+endsnippet
+
+snippet tr2 "Table row: 2 cols"
+|  $0                                    |                                     |
+endsnippet
+
+snippet tr3 "Table row: 3 cols"
+|  $0                      |                         |                         |
+endsnippet
+
+snippet tr4 "Table row: 4 cols"
+|  $0                |                  |                  |                  |
 endsnippet
 
 snippet ilc "Inline code"
 \`#!$1\`$0
+endsnippet
+
+snippet cf "Codeblock" b
+\`\`\`$1
+$0
+\`\`\`
 endsnippet
 
 snippet cfjs "JS Codeblock" b
