@@ -88,7 +88,7 @@ augroup filetype_jsx
 augroup END
 
 " ===================================================================
-" KEYBINDINGS
+" KEY BINDINGS
 " ===================================================================
 " Leader key
 let mapleader = " "
@@ -114,6 +114,12 @@ nnoremap N Nzz
 " Center { and } paragraph navigation
 nnoremap { {zz
 nnoremap } }zz
+
+" Navigating table columns
+nnoremap <leader>cn f\|2l<S-R>
+nnoremap <leader>cp <S-F>\|;2l<S-R>
+nnoremap <leader>tn f\|2l
+nnoremap <leader>tp <S-F>\|;2l
 
 " Clear search highlight (:noh)
 nnoremap <silent> <C-L> :noh<CR>
