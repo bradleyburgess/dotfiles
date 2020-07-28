@@ -12,4 +12,6 @@ let g:fzf_action = {
 nnoremap <leader>rg :Rg<CR>
 
 " SETTINGS
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'     " Ignore Node Modules
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'                            " Ignore node
+let g:fzf_layout = { 'window': { 'height': 0.8, 'width': 0.8 } } " Window mode
+let $FZF_DEFAULT_OPTS = '--reverse'
