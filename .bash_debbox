@@ -23,3 +23,8 @@ alias shotcut="~/bin/appimage/Shotcut-200412.glibc2.14-x86_64.AppImage"
 alias dropboxesumc='docker exec -it dropbox_esumc dropbox'
 alias gobulletin="cd $(ls -d ~/Documents/esumc/bulletin-web/* | grep -P '\d{4}' | sort -r | head -n 1)"
 alias gohymns="cd ~/Documents/esumc/hymns"
+
+# FUNCTIONS
+function sshl {
+  ssh -L $1:localhost:$1 deb$2
+}
