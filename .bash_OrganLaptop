@@ -2,7 +2,7 @@
 # BASH aliases and variables for OrganLaptop
 
 # ALIASES: ESUMC
-alias gobulletin="cd $(ls -d /mnt/c/Users/bburgess/Documents/bulletin/web-bulletin/* | grep -P '\d{4}' | sort -r | head -n 1)"
+# alias gobulletin="cd $(ls -d /mnt/c/Users/bburgess/Documents/bulletin/web-bulletin/* | grep -P '\d{4}' | sort -r | head -n 1)"
 alias gohymns="cd /mnt/c/Users/bburgess/Documents/bulletin/lyhymns"
 alias gohome="cd /mnt/c/Users/bburgess"
 alias godeblocal='ssh deblocal'
@@ -16,4 +16,9 @@ export PATH=$PATH:~/.local/bin
 # FUNCTIONS
 function sshl {
   ssh -L $1:localhost:$1 deb$2
+}
+
+# FUNCTION: ESUMC
+function gobulletin {
+  cd $(ls -d /mnt/c/Users/bburgess/Documents/bulletin/web-bulletin/* | grep -P '\d{4}' | sort -r | head -n 1)
 }
