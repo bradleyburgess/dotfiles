@@ -15,7 +15,27 @@ export PATH=$PATH:~/.local/bin
 
 # FUNCTIONS
 function sshl {
-  ssh -L $1:localhost:$1 deb$2
+  echo
+  echo "SSH localhost port forwarding"
+  echo "============================="
+  echo
+  echo -n "Host name: "
+  read hostName
+  echo -n "Remote port: "
+  read remotePort
+  echo -n "Local port (default = remote): "
+  read localPort
+  echo
+
+  if [ $localPort -z ]
+  then
+    localPort=$remotePort
+  fi
+
+  echo "Connecting ..."
+  echo
+
+  ssh -L $localPort:localhost:$remotePort $hostName
 }
 
 # FUNCTION: ESUMC
