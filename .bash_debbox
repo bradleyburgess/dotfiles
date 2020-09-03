@@ -28,3 +28,29 @@ alias gohymns="cd ~/Documents/esumc/hymns"
 function gobulletin {
   cd $(ls -d ~/Documents/esumc/bulletin-web/* | grep -P '\d{4}' | sort -r | head -n 1)
 }
+
+# FUNCTIONS: TMUX
+function tmuxps() {
+  cd ~/Documents/pluralsight
+  tmux new-session -d -s pluralsight
+  tmux rename-window -t pluralsight:1 nvim
+  tmux new-window -t pluralsight -a -n wiki
+  tmux new-window -t pluralsight -a -n mkdocs
+  tmux new-window -t pluralsight -a -n npm
+  tmux new-window -t pluralsight -a -n bash
+  tmux send -t pluralsight:2 gowiki ENTER clear ENTER
+  tmux send -t pluralsight:3 gowiki ENTER 'nvim mkdocs.yml' ENTER
+  tmux select-window -t pluralsight:1
+  tmux attach -t pluralsight
+}
+
+function tmuxdev() {
+  tmux new-session -d -s ${PWD##*/}
+  tmux rename-window -t ${PWD##*/}:1 nvim
+  tmux new-window -t ${PWD##*/} -a -n npm
+  tmux new-window -t ${PWD##*/} -a -n ranger
+  tmux new-window -t ${PWD##*/} -a -n bash
+  tmux send -t ${PWD##*/}:3 ranger ENTER
+  tmux select-window -t ${PWD##*/}:1
+  tmux attach -t ${PWD##*/}
+}
