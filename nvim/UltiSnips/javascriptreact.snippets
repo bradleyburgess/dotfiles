@@ -7,16 +7,13 @@ const $1 = ($2) => ${3:{$0\}}
 endsnippet
 
 snippet i "React import" b
-import $1 from "$2"
-$0
+import $0 from "$1"
 endsnippet
 
 snippet rfc "React Functional Component" b
 import React from "react"
-${1:import $2 from "$3"}
 
-const `!p snip.rv = snip.basename` = ($4) => {
-  $5
+const `!p snip.rv = snip.basename` = ($1) => {
   return (
     $0
   )
@@ -25,17 +22,12 @@ const `!p snip.rv = snip.basename` = ($4) => {
 export default `!p snip.rv = snip.basename`
 endsnippet
 
-snippet rsc "React Stateful Component" b
+snippet rcc "React Class Component" b
 import React from "react"
-${1:import $2 from "$3"}
 
 class `!p snip.rv = snip.basename` extends React.Component {
-	${4:state = {
-	  $5
-	\}}
-
   render() {
-    $6
+    $1
 			return (
         $0
       )
