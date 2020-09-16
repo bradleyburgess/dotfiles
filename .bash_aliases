@@ -8,6 +8,17 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias godotfiles='cd ~/dotfiles'
 
+# cd hack from https://www.redhat.com/sysadmin/cd-command
+function cd {
+  if [ $# -eq 0  ]; then
+    pushd ~ > /dev/null
+  elif [ " $1" = " -"  ]; then
+    pushd "$OLDPWD" > /dev/null
+  else
+    pushd "$@" > /dev/null
+  fi
+}
+
 # LS OPTIONS
 # ============================
 alias ll='ls -lah'
