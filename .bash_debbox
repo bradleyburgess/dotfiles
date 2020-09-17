@@ -26,7 +26,8 @@ alias gohymns="cd ~/Documents/esumc/hymns"
 
 # FUNCTIONS: ESUMC
 function gobulletin {
-  cd $(ls -d ~/Documents/esumc/bulletin-web/* | grep -P '\d{4}' | sort -r | head -n 1)
+  # cd $(ls -d ~/Documents/esumc/bulletin-web/* | grep -P '\d{4}' | sort -r | head -n 1)
+  cd ~/Documents/esumc/bulletin-web/next-bulletin
 }
 
 # FUNCTIONS: TMUX
