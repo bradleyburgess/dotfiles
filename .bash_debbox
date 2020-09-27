@@ -55,3 +55,17 @@ function tmuxdev() {
   tmux select-window -t ${PWD##*/}:1
   tmux attach -t ${PWD##*/}
 }
+
+# FUNCTIONS: React dev
+function newComponent() {
+  echo -n "Enter component name: "
+  read componentName
+  mkdir "src/components/${componentName}"
+  touch "src/components/${componentName}/${componentName}.js"
+  touch "src/components/${componentName}/index.js"
+
+  importStatement="import { ${componentName} } from "'"'"./${componentName}"'";'
+  exportStatement="export default ${componentName};"
+  echo $importStatement > "src/components/${componentName}/index.js"
+  echo $exportStatement >> "src/components/${componentName}/index.js"
+}
