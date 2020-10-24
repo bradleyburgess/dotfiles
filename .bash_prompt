@@ -66,16 +66,16 @@ if tput setaf 1 &> /dev/null; then
 	reset=$(tput sgr0);
 	# Solarized colors, taken from http://git.io/solarized-colors.
 	# Modified colors taken from vim-code-dark theme, via 8bit conversion
-	black=$(tput setaf 0);
-	blue=$(tput setaf 75);        # Original: 33
-	cyan=$(tput setaf 153);       # Original: 37
-	green=$(tput setaf 65);       # Original: 64
-	orange=$(tput setaf 173);     # Original: 166
-	purple=$(tput setaf 175);     # Original: 125
-	red=$(tput setaf 203);        # Original: 124
-	violet=$(tput setaf 60);      # Original: 61
-	white=$(tput setaf 15);
-	yellow=$(tput setaf 187);     # Original: 136
+	black=$(tput setaf 235);      # Original: 0
+	blue=$(tput setaf 66);        # Original: 33  / 75
+	cyan=$(tput setaf 72);        # Original: 37  / 153
+	green=$(tput setaf 106);      # Original: 64  / 64
+	orange=$(tput setaf 166);     # Original: 166 / 173
+	purple=$(tput setaf 132);     # Original: 125 / 175
+	red=$(tput setaf 124);        # Original: 124 / 203
+	violet=$(tput setaf 175);     # Original: 61  / 60
+	white=$(tput setaf 223);      # Original: 15
+	yellow=$(tput setaf 172);     # Original: 136 / 187
 else
 	bold='';
 	reset="\e[0m";
