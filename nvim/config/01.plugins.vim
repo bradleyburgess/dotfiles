@@ -3,10 +3,14 @@
 
 call plug#begin("~/.vim/plugged")
   " UNUSED
+  " Plug 'sheerun/vim-polyglot'                         " Language packs
   " Plug 'dracula/vim', { 'as': 'dracula' }             " Dracula theme
   " Plug 'kien/ctrlp.vim'                               " Ctrl-P (like VS Code)
   " Plug 'tomasiser/vim-code-dark'                      " VS Code dark theme
   " Plug 'tpope/vim-sensible'                           " Sensible defaults
+  " Plug '~/.vim/plugged/code-dark_bb'                  " Forked VS Code theme
+  " Plug 'honza/vim-snippets'                           " Snippets
+  " Plug 'herringtondarkholme/yats.vim'
   
   " GENERAL
   Plug 'airblade/vim-rooter'                            " Project-based search
@@ -15,23 +19,21 @@ call plug#begin("~/.vim/plugged")
   Plug 'wlemuel/vim-tldr'                               " TLDR for Vim
 
   " THEMES / UI
-  Plug '~/.vim/plugged/code-dark_bb'                    " Forked VS Code theme
   Plug 'Yggdroot/indentLine'                            " Indent lines
   Plug 'itchyny/lightline.vim'                          " Lightline bar
   Plug 'gruvbox-community/gruvbox'                      " Gruvbox (community)
   Plug 'shinchu/lightline-gruvbox.vim'                  " Lightline gruvbox
 
   " LANGUAGE PACKS
+  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
   Plug 'cakebaker/scss-syntax.vim'                      " Sass
-  Plug 'evidens/vim-twig'                               " Twig language
-  Plug 'ianks/vim-tsx'
   Plug 'jparise/vim-graphql'
-  Plug 'leafgarland/typescript-vim'
   Plug 'maxmellon/vim-jsx-pretty'
   Plug 'pangloss/vim-javascript'
   Plug 'peitalin/vim-jsx-typescript'
-  Plug 'sheerun/vim-polyglot'                           " Language packs
-  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+  Plug 'ianks/vim-tsx'
+  Plug 'leafgarland/typescript-vim'
+  Plug 'jparise/vim-graphql'
 
   " AUTOCOMPLETE ETC
   Plug 'jiangmiao/auto-pairs'                           " Auto pairs
@@ -39,7 +41,6 @@ call plug#begin("~/.vim/plugged")
   Plug 'tpope/vim-commentary'                           " Comments
   Plug 'tpope/vim-repeat'                               " Extended repeat func
   Plug 'tpope/vim-surround'                             " Surround
-" Plug 'honza/vim-snippets'                             " Snippets
 
   " FILE MANAGEMENT
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }   " Fuzzy Finder
