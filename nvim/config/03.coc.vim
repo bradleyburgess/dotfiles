@@ -56,6 +56,13 @@ inoremap <expr> <CR>
 nmap <leader>p :Prettier<CR>
 vmap <leader>p <Plug>(coc-format-selected)
 
-" GO: Definitions / References
+" GO: Definitions / References / Diagnostics
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
+nmap <silent> <leader>gy <Plug>(coc-type-definition)
+nmap <silent> <leader>gi <Plug>(coc-implementation)
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" Popup hover
+nnoremap <silent> <leader>i :call CocAction('doHover')<CR>
