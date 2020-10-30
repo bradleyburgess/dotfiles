@@ -63,15 +63,7 @@ if exists('+termguicolors')
 endif
 
 " ===================================================================
-" MISCELLANEOUS
-" ===================================================================
-let g:vim_json_conceal=0                        " Fix indentLine JSON quotes
-let g:vim_markdown_conceal = 0                  " Disable conceal for markdown
-let g:vim_markdown_conceal_code_blocks = 0
-let g:vim_markdown_conceal_links = 0
-
-" ===================================================================
-" AUTOCMD
+" LANGUAGE: JAVASCRIPT / TYPESCRIPT
 " ===================================================================
 " When entering JS files, rescan buffers for syntax
 au BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
@@ -87,6 +79,23 @@ au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 "     autocmd!
 "     autocmd FileType javascript set filetype=javascriptreact
 " augroup END
+
+" ===================================================================
+" LANGUAGE: JSON
+" ===================================================================
+set conceallevel=0
+let g:vim_json_syntax_conceal = 0           " Disable JSON conceal
+" Read JSON as JSONC
+au BufNewFile,BufRead,BufEnter tsconfig.* setlocal ft=jsonc
+au BufNewFile,BufRead,BufEnter tsconfig.* setlocal commentstring=//\ %s
+
+" ===================================================================
+" LANGUAGE: MARKDOWN
+" ===================================================================
+let g:vim_markdown_conceal = 0              " Disable markdown conceal
+let g:vim_markdown_conceal_code_blocks = 0  "
+let g:vim_markdown_conceal_links = 0        "
+let g:vim_markdown_folding_level = 2        " Fold to heading level 2
 
 " ===================================================================
 " KEY BINDINGS
