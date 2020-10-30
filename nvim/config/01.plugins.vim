@@ -25,6 +25,10 @@ call plug#begin("~/.vim/plugged")
   Plug 'shinchu/lightline-gruvbox.vim'                  " Lightline gruvbox
 
   " LANGUAGE PACKS
+  Plug 'sersorrel/vim-lilypond'
+  Plug 'plasticboy/vim-markdown'
+  Plug 'elzr/vim-json'
+  Plug 'kevinoid/vim-jsonc'
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
   Plug 'cakebaker/scss-syntax.vim'                      " Sass
   Plug 'jparise/vim-graphql'
@@ -41,6 +45,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'tpope/vim-commentary'                           " Comments
   Plug 'tpope/vim-repeat'                               " Extended repeat func
   Plug 'tpope/vim-surround'                             " Surround
+  Plug 'godlygeek/tabular'                              " Alignment
 
   " FILE MANAGEMENT
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }   " Fuzzy Finder
