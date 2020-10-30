@@ -35,12 +35,12 @@ function tmuxps() {
   cd ~/Documents/learning/pluralsight
   tmux new-session -d -s pluralsight
   tmux rename-window -t pluralsight:1 nvim
-  tmux new-window -t pluralsight -a -n wiki
-  tmux new-window -t pluralsight -a -n mkdocs
   tmux new-window -t pluralsight -a -n npm
   tmux new-window -t pluralsight -a -n bash
-  tmux send -t pluralsight:2 gowiki ENTER clear ENTER
-  tmux send -t pluralsight:3 gowiki ENTER 'nvim mkdocs.yml' ENTER
+  tmux new-window -t pluralsight -a -n wiki
+  tmux new-window -t pluralsight -a -n mkdocs
+  tmux send -t pluralsight:4 gowiki ENTER clear ENTER
+  tmux send -t pluralsight:5 gowiki ENTER 'nvim mkdocs.yml' ENTER
   tmux select-window -t pluralsight:1
   tmux attach -t pluralsight
 }
