@@ -6,9 +6,14 @@ export EDITOR="/home/bradley/bin/appimage/nvim.appimage"
 export PATH="$PATH:$HOME/docker:$HOME/.local/bin:$HOME/dotfiles:$HOME/dotfiles/scripts"
 export PLEX="/mnt/storage/plexmedia"
 
-# ALIASES: General
+# ALIASES: System
 alias dropbox='docker exec -it dropbox_personal dropbox'
+alias scan-nextcloud='docker exec --user abc nextcloud php /config/www/nextcloud/occ files:scan --all'
+alias scan-plex='docker exec plex /usr/lib/plexmediaserver/Plex\ Media\ Scanner --scan'
 alias shutdown='sudo systemctl shutdown'
+alias update-containers='cd ~/docker && docker-compose pull --ignore-pull-failures && docker-compose up -d'
+
+# ALIASES: Shortcuts
 alias gobj='cd ~/Documents/bujo'
 alias gowiki='cd /mnt/storage/wiki'
 
