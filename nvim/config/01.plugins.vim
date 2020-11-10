@@ -23,7 +23,6 @@ call plug#begin("~/.vim/plugged")
   Plug 'itchyny/lightline.vim'                          " Lightline bar
   Plug 'gruvbox-community/gruvbox'                      " Gruvbox (community)
   Plug 'shinchu/lightline-gruvbox.vim'                  " Lightline gruvbox
-  Plug 'luochen1990/rainbow'                            " Rainbow highlight ()
 
   " LANGUAGE PACKS
   Plug 'sersorrel/vim-lilypond'

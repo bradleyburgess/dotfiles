@@ -62,10 +62,6 @@ if exists('+termguicolors')
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
 
-" Rainbow improved plugin
-" set to 0 if you want to enable it later via :RainbowToggle
-let g:rainbow_active = 1 
-
 " ===================================================================
 " LANGUAGE: JAVASCRIPT / TYPESCRIPT
 " ===================================================================
