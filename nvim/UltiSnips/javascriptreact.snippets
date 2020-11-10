@@ -1,47 +1,5 @@
-snippet arw "JS arrow function" i
-($1) => ${2:{$0\}}
-endsnippet
-
-snippet req "CommonJS require" i
-const $0 = require('$1')
-endsnippet
-
-snippet tcb "try / catch block" i
-try {
-  $1
-}
-catch (error) {
-  $0
-}
-endsnippet
-
-snippet tcfb "try / catch / finally block" i
-try {
-  $1
-}
-catch (error) {
-  $2
-}
-finally {
-  $0
-}
-endsnippet
-
-snippet reqres "Express (req, res)"
-(req, res) => {
-  $0
-}
-endsnippet
-
-snippet reqresa "Express (req, res) async"
-async (req, res) => {
-  $0
-}
-endsnippet
-
-snippet arwc "JS arrow const" b
-const $1 = ($2) => ${3:{$0\}}
-endsnippet
+priority -50
+extends javascript
 
 snippet i "React import" b
 import $0 from "$1"
