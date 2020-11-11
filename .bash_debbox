@@ -16,6 +16,7 @@ alias update-containers='cd ~/docker && docker-compose pull --ignore-pull-failur
 # ALIASES: Shortcuts
 alias gobj='cd ~/Documents/bujo'
 alias gowiki='cd /mnt/storage/wiki'
+alias gostorage='cd /mnt/storage'
 
 # ALIASES: AppImages
 alias gimp="~/bin/appimage/GIMP_AppImage-release-2.10.18-withplugins-x86_64.AppImage"
