@@ -76,6 +76,11 @@ function newComponent() {
   echo $exportStatement >> "src/components/${componentName}/index.js"
 }
 
+# FUNCTIONS: General
+function youtubedl() {
+  docker run --rm --user $UID:$GID -v $PWD:/downloads wernight/youtube-dl $1
+}
+
 # NPM COMPLETION
 
 if type complete &>/dev/null; then
