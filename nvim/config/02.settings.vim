@@ -70,9 +70,9 @@ au BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
 au BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
 " Read typescript files
-au BufNewFile,BufRead *.ts setlocal filetype=typescript
+au BufNewFile,BufRead,BufEnter *.ts setlocal filetype=typescript
 au BufNewFile,BufRead,BufEnter *.ts setlocal indentexpr=GetTypescriptIndent()
-au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
+au BufNewFile,BufRead,BufEnter *.tsx setlocal filetype=typescriptreact
 
 " Read all JS as JSX
 " augroup filetype_jsx
