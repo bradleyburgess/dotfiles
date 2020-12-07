@@ -19,45 +19,26 @@ alias gowiki='cd /mnt/storage/wiki'
 alias gostorage='cd /mnt/storage'
 
 # ALIASES: AppImages
-alias gimp="~/bin/appimage/GIMP_AppImage-release-2.10.18-withplugins-x86_64.AppImage"
-alias musescore="~/bin/appimage/musescore-x86_64.AppImage"
 alias nvim='~/bin/appimage/nvim.appimage'
 alias reboot='sudo systemctl reboot'
-alias shotcut="~/bin/appimage/Shotcut-200412.glibc2.14-x86_64.AppImage"
 
 # ALIASES: ESUMC
 alias dropboxesumc='docker exec -it dropbox_esumc dropbox'
-# alias gobulletin="cd $(ls -d ~/Documents/esumc/bulletin-web/* | grep -P '\d{4}' | sort -r | head -n 1)"
 alias gohymns="cd ~/Documents/esumc/hymns"
 
 # FUNCTIONS: ESUMC
 function gobulletin {
-  # cd $(ls -d ~/Documents/esumc/bulletin-web/* | grep -P '\d{4}' | sort -r | head -n 1)
   cd ~/Documents/esumc/bulletin-web/next-bulletin
 }
 
 # FUNCTIONS: TMUX
-function tmuxps() {
-  cd ~/Documents/learning/pluralsight
-  tmux new-session -d -s pluralsight
-  tmux rename-window -t pluralsight:1 nvim
-  tmux new-window -t pluralsight -a -n npm
-  tmux new-window -t pluralsight -a -n bash
-  tmux new-window -t pluralsight -a -n wiki
-  tmux new-window -t pluralsight -a -n mkdocs
-  tmux send -t pluralsight:4 gowiki ENTER clear ENTER
-  tmux send -t pluralsight:5 gowiki ENTER 'nvim mkdocs.yml' ENTER
-  tmux select-window -t pluralsight:1
-  tmux attach -t pluralsight
-}
-
 function tmuxdev() {
   tmux new-session -d -s ${PWD##*/}
   tmux rename-window -t ${PWD##*/}:1 nvim
   tmux new-window -t ${PWD##*/} -a -n npm
+  tmux new-window -t ${PWD##*/} -a -n git
   tmux new-window -t ${PWD##*/} -a -n ranger
   tmux new-window -t ${PWD##*/} -a -n bash
-  tmux send -t ${PWD##*/}:3 ranger ENTER
   tmux select-window -t ${PWD##*/}:1
   tmux attach -t ${PWD##*/}
 }

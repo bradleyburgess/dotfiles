@@ -1,14 +1,8 @@
 #!/bin/bash
 # BASH aliases and variables for OrganLaptop
 
-# ALIASES: ESUMC
-# alias gobulletin="cd $(ls -d /mnt/c/Users/bburgess/Documents/bulletin/web-bulletin/* | grep -P '\d{4}' | sort -r | head -n 1)"
-alias gohymns="cd /mnt/c/Users/bburgess/Documents/bulletin/lyhymns"
-alias gohome="cd /mnt/c/Users/bburgess"
-alias godeblocal='ssh deblocal'
-alias godebremote='ssh debremote'
+# ALIASES
 alias nvim='~/bin/neovim/usr/bin/nvim'
-alias syncthing='~/bin/syncthing-windows-amd64-v1.6.1/syncthing.exe'
 
 # PATH
 export PATH=$PATH:~/.local/bin
@@ -36,9 +30,4 @@ function sshl {
   echo
 
   ssh -L $localPort:localhost:$remotePort $hostName
-}
-
-# FUNCTION: ESUMC
-function gobulletin {
-  cd $(ls -d /mnt/c/Users/bburgess/Documents/bulletin/web-bulletin/* | grep -P '\d{4}' | sort -r | head -n 1)
 }

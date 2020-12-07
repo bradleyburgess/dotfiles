@@ -1,12 +1,6 @@
 #!/usr/bin/env bash
 
 # Modified from CoreyMSchafer/dotfiles
-# ==========================================================
-
-# Shell prompt based on the Solarized Dark theme.
-# Screenshot: http://i.imgur.com/EkEtphC.png
-# Heavily inspired by @necolas’s prompt: https://github.com/necolas/dotfiles
-# iTerm → Profiles → Text → use 13pt Monaco with 1.1 vertical spacing.
 
 if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
 	export TERM='gnome-256color';
@@ -64,8 +58,7 @@ if tput setaf 1 &> /dev/null; then
 	tput sgr0; # reset colors
 	bold=$(tput bold);
 	reset=$(tput sgr0);
-	# Solarized colors, taken from http://git.io/solarized-colors.
-	# Modified colors taken from vim-code-dark theme, via 8bit conversion
+  # Color scheme based on gruvbox dark
 	black=$(tput setaf 235);      # Original: 0
 	blue=$(tput setaf 66);        # Original: 33  / 75
 	cyan=$(tput setaf 72);        # Original: 37  / 153
