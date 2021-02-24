@@ -17,6 +17,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'mbbill/undotree'                                " Undo tree
   Plug 'vim-utils/vim-man'                              " Vim manpage
   Plug 'wlemuel/vim-tldr'                               " TLDR for Vim
+  Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
   " THEMES / UI
   Plug 'Yggdroot/indentLine'                            " Indent lines
