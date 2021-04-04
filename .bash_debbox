@@ -33,7 +33,6 @@ function gobulletin {
 
 # FUNCTIONS: TMUX
 function tmuxdev() {
-  cd ~/
   tmux new-session -d -s ${PWD##*/}
   tmux rename-window -t ${PWD##*/}:1 nvim
   tmux new-window -t ${PWD##*/} -a -n npm
@@ -44,6 +43,7 @@ function tmuxdev() {
   tmux attach -t ${PWD##*/}
 }
 function tmuxadmin() {
+  cd ~/
   tmux new-session -d -s admin
   tmux rename-window -t admin:1 htop
   tmux new-window -t admin -a -n update
