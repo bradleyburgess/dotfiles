@@ -3,7 +3,7 @@
 
 # ENVIRONMENT VARIABLES
 export EDITOR="/home/bradley/bin/appimage/nvim.appimage"
-export PATH="$PATH:$HOME/docker:$HOME/.local/bin:$HOME/dotfiles:$HOME/dotfiles/scripts"
+export PATH="$PATH:$HOME/docker:$HOME/.local/bin:$HOME/dotfiles:$HOME/dotfiles/scripts:$HOME/bin"
 export PLEX="/mnt/storage/plexmedia"
 
 # ALIASES: System
@@ -33,6 +33,7 @@ function gobulletin {
 
 # FUNCTIONS: TMUX
 function tmuxdev() {
+  cd ~/
   tmux new-session -d -s ${PWD##*/}
   tmux rename-window -t ${PWD##*/}:1 nvim
   tmux new-window -t ${PWD##*/} -a -n npm
@@ -41,6 +42,16 @@ function tmuxdev() {
   tmux new-window -t ${PWD##*/} -a -n bash
   tmux select-window -t ${PWD##*/}:1
   tmux attach -t ${PWD##*/}
+}
+function tmuxadmin() {
+  tmux new-session -d -s admin
+  tmux rename-window -t admin:1 htop
+  tmux new-window -t admin -a -n update
+  tmux new-window -t admin -a -n backup
+  tmux new-window -t admin -a -n pi
+  tmux select-window -t admin:1
+  tmux send -t admin:1 htop ENTER
+  tmux attach -t admin
 }
 
 # FUNCTIONS: React dev
