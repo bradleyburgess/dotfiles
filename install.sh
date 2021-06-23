@@ -4,11 +4,11 @@
 cd ~
 
 # bashrc
-rm .bashrc
+mv .bashrc .bashrc_old
 ln -s dotfiles/.bashrc .
 
 # tmuxrc
-rm .tmux.conf
+mv .tmux.conf .tmux.conf_old
 ln -s dotfiles/.tmux.conf .
 
 # install fzf
