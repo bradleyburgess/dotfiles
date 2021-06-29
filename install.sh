@@ -11,20 +11,28 @@ get_latest_release() {
   }
 
 # First run check for required packages:
-# check nvim
+echo -e "\nChecking for Neovim..."
 if [[ -z $(command -v nvim) ]]
 then
   echo -e "\nPlease install Neovim before continuing...\n"
   exit 1
-# check tmux
-elif [[ -z $(command -v tmux) ]]
+else
+  echo "Neovim is installed!"
+fi
+
+echo -e "\nChecking for tmux..."
+if [[ -z $(command -v tmux) ]]
 then
   echo -e "\nPlease install Tmux before continuing...\n"
   exit 1
-# check node (for COC)
-elif [[ -z $(command -v node) ]]
+else
+  echo "Tmux is installed!"
+fi
+
+echo -e "\nChecking for node..."
+if [[ -z $(command -v node) ]]
 then
-  echo -e "\nNode is not installed. Would you like to install nvm from git, or exit"
+  echo -e "Node is not installed. Would you like to install nvm from git, or exit"
   echo -e "and install from your package manager?\n"
   echo -e "Type git/exit"
   read NODE_INSTALL
@@ -33,8 +41,11 @@ then
     echo -e "\nExiting... Please make sure to install Node before continuing.\n"
     exit 0
   fi
-# check fzf
-elif [[ -z $(command -v fzf) ]]
+else echo "Node is installed!"
+fi
+
+echo -e "\nChecking for fzf..."
+if [[ -z $(command -v fzf) ]]
 then
   echo -e "\nFZF is not installed. Would you like to install from git, or exit"
   echo -e "and install from your package manager?\n"
@@ -45,6 +56,8 @@ then
     echo -e "\nExiting ... Please make sure to install FZF before continuing.\n"
     exit 0
   fi
+else
+  echo "fzf is installed!"
 fi
 
 cd ~
