@@ -14,35 +14,35 @@ get_latest_release() {
 # check nvim
 if [[ -z $(command -v nvim) ]]
 then
-  echo "\nPlease install Neovim before continuing...\n"
+  echo -e "\nPlease install Neovim before continuing...\n"
   exit 1
 # check tmux
 elif [[ -z $(command -v tmux) ]]
 then
-  echo "\nPlease install Tmux before continuing...\n"
+  echo -e "\nPlease install Tmux before continuing...\n"
   exit 1
 # check node (for COC)
 elif [[ -z $(command -v node) ]]
 then
-  echo "\nNode is not installed. Would you like to install nvm from git, or exit"
-  echo "and install from your package manager?\n"
-  echo "Type git/exit"
+  echo -e "\nNode is not installed. Would you like to install nvm from git, or exit"
+  echo -e "and install from your package manager?\n"
+  echo -e "Type git/exit"
   read NODE_INSTALL
   if [[ $NODE_INSTALL != "git" ]]
   then
-    echo "\nExiting... Please make sure to install Node before continuing.\n"
+    echo -e "\nExiting... Please make sure to install Node before continuing.\n"
     exit 0
   fi
 # check fzf
 elif [[ -z $(command -v fzf) ]]
 then
-  echo "\nFZF is not installed. Would you like to install from git, or exit"
-  echo "and install from your package manager?\n"
-  echo "Type git/exit"
+  echo -e "\nFZF is not installed. Would you like to install from git, or exit"
+  echo -e "and install from your package manager?\n"
+  echo -e "Type git/exit"
   read FZF_INSTALL
   if [[ $FZF_INSTALL != "git" ]]
   then
-    echo "\nExiting ... Please make sure to install FZF before continuing.\n"
+    echo -e "\nExiting ... Please make sure to install FZF before continuing.\n"
     exit 0
   fi
 fi
@@ -50,12 +50,12 @@ fi
 cd ~
 
 # symlink bashrc
-echo "\nBacking up and setting up bashrc...\n"
+echo -e "\nBacking up and setting up bashrc...\n"
 mv .bashrc .bashrc_old
 ln -s dotfiles/.bashrc .
 
 # symlink tmuxrc & install tpm & install plugins
-echo "\nSetting up tmux config and plugins...\n"
+echo -e "\nSetting up tmux config and plugins...\n"
 if [[ -f ~/.tmux.conf ]]
 then
   mv .tmux.conf .tmux.conf_old
@@ -70,7 +70,7 @@ tmux kill-server
 # install fzf
 if [[ $FZF_INSTALL = "git" ]]
 then
-  echo "\nInstalling fzf...\n"
+  echo -e "\nInstalling fzf...\n"
   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
   ~/.fzf/install
 fi
@@ -79,7 +79,7 @@ fi
 if [[ $NODE_INSTALL = "git" ]]
 then
   NVM_VERSION=$(get_latest_release "nvm-sh/nvm")
-  echo "\nInstalling nvm and node lts...\n"
+  echo -e "\nInstalling nvm and node lts...\n"
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh | bash
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh"  ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
@@ -87,7 +87,7 @@ then
 fi
 
 # install vim-plugged and plugins
-echo "Installing vim-plugged and plugins..."
+echo -e "Installing vim-plugged and plugins..."
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 nvim --headless +PlugInstall +qall
 
@@ -104,6 +104,6 @@ then
   ln -s ~/dotfiles/i3status.conf ~/.config/i3status/config
 fi
 
-echo "\nAll done!"
+echo -e "\nAll done!"
 
 exit 0
