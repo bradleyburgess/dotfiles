@@ -32,6 +32,7 @@ then
   then
     echo "\nExiting... Please make sure to install Node before continuing.\n"
     exit 0
+  fi
 # check fzf
 elif [[ -z $(command -v fzf) ]]
 then
@@ -104,3 +105,5 @@ then
 fi
 
 echo "\nAll done!"
+
+exit 0
