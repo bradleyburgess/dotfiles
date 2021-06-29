@@ -56,16 +56,16 @@ call plug#begin("~/.vim/plugged")
   Plug 'ryanoasis/vim-devicons'                         " NERD icons
 
   " COC EXTENSIONS:
-  " let g:coc_global_extensions = [
-  "       \'coc-emmet', 
-  "       \'coc-eslint',
-  "       \'coc-css', 
-  "       \'coc-html', 
-  "       \'coc-json', 
-  "       \'coc-prettier', 
-  "       \'coc-python',
-  "       \'coc-tsserver',
-  "       \'coc-yaml',
-  "       \'coc-yank',
-  "       \]
+  let g:coc_global_extensions = [
+        \'coc-emmet', 
+        \'coc-eslint',
+        \'coc-css', 
+        \'coc-html', 
+        \'coc-json', 
+        \'coc-prettier', 
+        \'coc-python',
+        \'coc-tsserver',
+        \'coc-yaml',
+        \'coc-yank',
+        \]
 call plug#end()
