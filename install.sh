@@ -102,7 +102,7 @@ fi
 # install vim-plugged and plugins
 echo -e "Installing vim-plugged and plugins..."
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-nvim --headless +PlugInstall +qall
+nvim --headless -u ~/dotfiles/nvim/config/01.plugins.vim +PlugInstall +qall
 
 # symlink nvim
 if [[ ! -d ~/.config ]]
