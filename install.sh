@@ -104,5 +104,3 @@ then
 fi
 
 echo "\nAll done!"
-
-exit 0
