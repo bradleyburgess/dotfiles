@@ -105,6 +105,10 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 nvim --headless +PlugInstall +qall
 
 # symlink nvim
+if [[ ! -d ~/.config ]]
+then
+  mkdir ~/.config
+fi
 cd ~/.config
 ln -s ~/dotfiles/nvim .
 
@@ -118,5 +122,8 @@ then
 fi
 
 echo -e "\nAll done!"
+
+cd ~
+source ~/.bashrc
 
 exit 0
