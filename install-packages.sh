@@ -42,4 +42,11 @@ else
   echo "Package manager not recognized!"
 fi
 
+if [[ ! -f ~/install-scripts.log ]]
+then
+  echo -e "Install Scripts Run:\n\n" >> ~/install-scripts.log
+fi
+echo "install-packages" >> ~/install-scripts.log
+echo $(grep -v '^#' ~/pkglist | sed 's/^/  - /') >> ~/install-scripts.log
+
 exit 0

@@ -1,32 +1,60 @@
-# must add docker, snapraid, mergerfs
-# must check package names deb vs pacman
-
-# GUI
-# i3-wm i3status lightdm dmenu rofi i3lock
-# gnome gdm
+# COMMONLY-INSTALLED PACKAGES. Uncomment all that are needed
+# 
+# GUI: i3
+# i3-wm
+# i3status
+# lightdm
+# dmenu
+# rofi
+# i3lock
+# lxappearance
+#
+# GUI: Gnome
+# gnome
+# gdm
+#
+# GUI: XFCE4
 # xfce4
-
-# Web browsers
+#
+# WEB
 # firefox
 # firefox-esr
 # tor
-
-# Office & Multimedia
+# transmission-cli
+# transmission-gtk
+# ufw
+#
+# OFFICE & MULTIMEDIA
+# evince
+# galculator
+# gimp
+# gnome-clocks
 # libreoffice
+# pdftk
+# shotcut
+# shotwell
+# simplescan
 # vlc
-
-# Editors
-# vim
-# neovim
-# mousepad
+#
+# EDITORS
 # gedit
-
-# File browsers
+# mousepad
+# neovim
+# vim
+#
+# FILE BROWSERS
 # nautilus
 # ranger
 # thunar
-
-# Terminal emulators
-# lxterminal
+#
+# TERMINAL EMULATORS
 # gnome-terminal
+# lxterminal
 # xfce4-terminal
+#
+# SYSTEM
+# baobab
+# gparted
+# htop
+# iftop
+# ncdu

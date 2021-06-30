@@ -130,4 +130,10 @@ echo -e "\nAll done!"
 echo -e "\nNext steps:\n\nInstall packges from the ~/.pkglist file"
 echo -e "using install-packages.sh"
 
+if [[ ! -f ~/install-scripts.log ]]
+then
+  echo -e "Install Scripts Run:\n\n" >> ~/install-scripts.log
+fi
+echo "install-dotfiles" >> ~/install-scripts.log
+
 exit 0

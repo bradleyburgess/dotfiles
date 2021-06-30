@@ -18,3 +18,9 @@ cd yay
 makepkg -si
 cd ~/dotfiles
 sudo rm -rf ~/temp/yay
+
+if [[ ! -f ~/install-scripts.log ]]
+then
+  echo -e "Install Scripts Run:\n\n" >> ~/install-scripts.log
+fi
+echo "install-yay" >> ~/install-scripts.log
