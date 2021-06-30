@@ -1,0 +1,32 @@
+# must add docker, snapraid, mergerfs
+# must check package names deb vs pacman
+
+# GUI
+# i3-wm i3status lightdm dmenu rofi i3lock
+# gnome gdm
+# xfce4
+
+# Web browsers
+# firefox
+# firefox-esr
+# tor
+
+# Office & Multimedia
+# libreoffice
+# vlc
+
+# Editors
+# vim
+# neovim
+# mousepad
+# gedit
+
+# File browsers
+# nautilus
+# ranger
+# thunar
+
+# Terminal emulators
+# lxterminal
+# gnome-terminal
+# xfce4-terminal
