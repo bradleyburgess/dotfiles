@@ -47,7 +47,7 @@ fi
 echo -e "\nChecking for fzf..."
 if [[ -z $(command -v fzf) ]]
 then
-  echo -e "\nFZF is not installed. Would you like to install from git, or exit"
+  echo -e "FZF is not installed. Would you like to install from git, or exit"
   echo -e "and install from your package manager?\n"
   echo -e "Type git/exit"
   read FZF_INSTALL
@@ -63,17 +63,20 @@ fi
 cd ~
 
 # symlink bashrc
-echo -e "\nBacking up and setting up bashrc...\n"
-mv .bashrc .bashrc_old
-ln -s dotfiles/.bashrc .
+echo -e "\nSetting up bashrc..."
+if [[ -f ~/.bashrc ]]
+then
+  mv ~/.bashrc ~/.bashrc_old
+fi
+ln -s dotfiles/.bashrc ~/.bashrc
 
 # symlink tmuxrc & install tpm & install plugins
-echo -e "\nSetting up tmux config and plugins...\n"
+echo -e "\nSetting up tmux config and plugins..."
 if [[ -f ~/.tmux.conf ]]
 then
-  mv .tmux.conf .tmux.conf_old
+  mv ~/.tmux.conf ~/.tmux.conf_old
 fi
-ln -s dotfiles/.tmux.conf .
+ln -s dotfiles/.tmux.conf ~/.tmux.conf
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 tmux start-server
 tmux new-session -d
@@ -121,9 +124,10 @@ then
   ln -s ~/dotfiles/i3status.conf ~/.config/i3status/config
 fi
 
-echo -e "\nAll done!"
-
 cd ~
-source ~/.bashrc
+
+echo -e "\nAll done!"
+echo -e "\nNext steps:\n\nInstall packges from the ~/.pkglist file"
+echo -e "using install-packages.sh"
 
 exit 0
