@@ -1,0 +1,30 @@
+
+# An example for mergerfs + snapraid fstab entry
+#
+# First identify the disks you need with:
+# ls /dev/disks/by-id (or by-uuid)
+#
+# Obviously make sure they are partitioned.
+# Then decide which disks you want for storage vs parity.
+# NB: The largest disk must be a parity drive.
+#
+# Mount each drive with its own fstab entry, and then combine them in a
+# mergerfs pool.
+#
+# Example:
+#
+# /dev/disk/by-id/xyz1  /mnt/parity1 ext4 defaults 0 0
+# /dev/disk/by-id/xyz2  /mnt/disk1   ext4 defaults 0 0
+# /dev/disk/by-id/xyz3  /mnt/disk2   ext4 defaults 0 0
+# /dev/disk/by-id/xyz4  /mnt/disk3   ext4 defaults 0 0
+# /dev/disk/by-id/xyz5  /mnt/disk4   ext4 defaults 0 0
+#
+# /mnt/disk*            /mnt/storage fuse.mergerfs direct_io,defaults,allow_other,minfreespace=50G,fsname=mergerfs 0 0
+#
+# Then you can mount everything using 'mount -a'
+#
+# Don't forget to configure snapraid! An example file is included.
+# After configuring, you can run it with 'snapraid sync'
+#
+# You should also add a cron entry for snapraid-runner, e.g.:
+# 00 08 * * * python2 /opt/snapraid-runner/snapraid-runner.py -c /opt/snapraid-runner/snapraid-runner.conf
