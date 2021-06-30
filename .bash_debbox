@@ -2,34 +2,34 @@
 # BASH aliases and variables for debbox
 
 # ENVIRONMENT VARIABLES
-export EDITOR="/home/bradley/bin/appimage/nvim.appimage"
-export PATH="$PATH:$HOME/docker:$HOME/.local/bin:$HOME/dotfiles:$HOME/dotfiles/scripts:$HOME/bin"
-export PLEX="/mnt/storage/plexmedia"
+# export EDITOR="/home/bradley/bin/appimage/nvim.appimage"
+# export PATH="$PATH:$HOME/docker:$HOME/.local/bin:$HOME/dotfiles:$HOME/dotfiles/scripts:$HOME/bin"
+# export PLEX="/mnt/storage/plexmedia"
 
 # ALIASES: System
 alias dropbox='docker exec -it dropbox_personal dropbox'
 alias scan-nextcloud='docker exec --user abc nextcloud php /config/www/nextcloud/occ files:scan --all'
 alias scan-plex='docker exec plex /usr/lib/plexmediaserver/Plex\ Media\ Scanner --scan'
+alias reboot='sudo systemctl reboot'
 alias shutdown='sudo systemctl shutdown'
 alias update-containers='cd ~/docker && docker-compose pull --ignore-pull-failures && docker-compose up -d'
 
 # ALIASES: Shortcuts
-alias gobj='cd ~/Documents/bujo'
-alias gowiki='cd /mnt/storage/wiki'
-alias gostorage='cd /mnt/storage'
+# alias gobj='cd ~/Documents/bujo'
+# alias gowiki='cd /mnt/storage/wiki'
+# alias gostorage='cd /mnt/storage'
 
 # ALIASES: AppImages
-alias nvim='~/bin/appimage/nvim.appimage'
-alias reboot='sudo systemctl reboot'
+# alias nvim='~/bin/appimage/nvim.appimage'
 
 # ALIASES: ESUMC
-alias dropboxesumc='docker exec -it dropbox_esumc dropbox'
-alias gohymns="cd ~/Documents/esumc/hymns"
+# alias dropboxesumc='docker exec -it dropbox_esumc dropbox'
+# alias gohymns="cd ~/Documents/esumc/hymns"
 
 # FUNCTIONS: ESUMC
-function gobulletin {
-  cd ~/Documents/esumc/bulletin-web/next-bulletin
-}
+# function gobulletin {
+#   cd ~/Documents/esumc/bulletin-web/next-bulletin
+# }
 
 # FUNCTIONS: TMUX
 function tmuxdev() {
@@ -54,23 +54,23 @@ function tmuxadmin() {
 }
 
 # FUNCTIONS: React dev
-function newComponent() {
-  echo -n "Enter component name: "
-  read componentName
-  mkdir "src/components/${componentName}"
-  touch "src/components/${componentName}/${componentName}.js"
-  touch "src/components/${componentName}/index.js"
+# function newComponent() {
+#   echo -n "Enter component name: "
+#   read componentName
+#   mkdir "src/components/${componentName}"
+#   touch "src/components/${componentName}/${componentName}.js"
+#   touch "src/components/${componentName}/index.js"
 
-  importStatement="import { ${componentName} } from "'"'"./${componentName}"'";'
-  exportStatement="export default ${componentName};"
-  echo $importStatement > "src/components/${componentName}/index.js"
-  echo $exportStatement >> "src/components/${componentName}/index.js"
-}
+#   importStatement="import { ${componentName} } from "'"'"./${componentName}"'";'
+#   exportStatement="export default ${componentName};"
+#   echo $importStatement > "src/components/${componentName}/index.js"
+#   echo $exportStatement >> "src/components/${componentName}/index.js"
+# }
 
 # FUNCTIONS: General
-function youtubedl() {
-  docker run --rm --user $UID:$GID -v $PWD:/downloads wernight/youtube-dl $1
-}
+# function youtubedl() {
+#   docker run --rm --user $UID:$GID -v $PWD:/downloads wernight/youtube-dl $1
+# }
 
 # NPM COMPLETION
 
@@ -127,5 +127,5 @@ elif type compctl &>/dev/null; then
 fi
 
 # Android studio PATH
-[ -d "$HOME/Library/Android/sdk" ] && ANDROID_SDK=$HOME/Library/Android/sdk || ANDROID_SDK=$HOME/Android/Sdk
-echo "export ANDROID_SDK=$ANDROID_SDK" >> ~/`[[ $SHELL == *"zsh" ]] && echo '.zshenv' || echo '.bash_profile'`
+# [ -d "$HOME/Library/Android/sdk" ] && ANDROID_SDK=$HOME/Library/Android/sdk || ANDROID_SDK=$HOME/Android/Sdk
+# echo "export ANDROID_SDK=$ANDROID_SDK" >> ~/`[[ $SHELL == *"zsh" ]] && echo '.zshenv' || echo '.bash_profile'`
