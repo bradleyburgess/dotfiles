@@ -48,8 +48,8 @@ fi
 # Install snapraid-runner
 sudo mkdir /opt/snapraid-runner
 cd /opt/snapraid-runner
-wget https://raw.githubusercontent.com/Chronial/snapraid-runner/master/snapraid-runner.py
-wget -O snapraid-runner.conf https://raw.githubusercontent.com/IronicBadger/ansible/master/roles/epsilon/templates/opt/snapraid-runner.j2
+sudo wget https://raw.githubusercontent.com/Chronial/snapraid-runner/master/snapraid-runner.py
+sudo wget -O snapraid-runner.conf https://raw.githubusercontent.com/IronicBadger/ansible/master/roles/epsilon/templates/opt/snapraid-runner.j2
 
 cd ~/temp
 
