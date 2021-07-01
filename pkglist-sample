@@ -1,13 +1,19 @@
 # COMMONLY-INSTALLED PACKAGES. Uncomment all that are needed
 # 
+# GENERAL
+# openssh
+# wget
 # GUI: i3
+# dmenu
 # i3-wm
+# i3lock
 # i3status
 # lightdm
-# dmenu
-# rofi
-# i3lock
+# lightdm-gtk-greeter
 # lxappearance
+# lxrandr
+# rofi
+# xorg
 #
 # GUI: Gnome
 # gnome
