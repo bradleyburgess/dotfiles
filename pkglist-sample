@@ -1,10 +1,13 @@
 # COMMONLY-INSTALLED PACKAGES. Uncomment all that are needed
 # 
 # GENERAL
+# nerd-fonts-complete
 # openssh
 # wget
+
 # GUI: i3
 # dmenu
+# feh
 # i3-wm
 # i3lock
 # i3status
@@ -12,11 +15,14 @@
 # lightdm-gtk-greeter
 # lxappearance
 # lxrandr
+# nitrogen
 # rofi
+# scrot
 # xorg
 #
 # GUI: Gnome
 # gnome
+# gnome-tweaks
 # gdm
 #
 # GUI: XFCE4
