@@ -135,5 +135,5 @@ nnoremap <leader>tp <S-F>\|;2l
 nnoremap <silent> <C-L> :noh<CR>
 
 " Ctrl-/ to comment / uncomment
-nnoremap <C-/> :Commentary<CR>
-vnoremap <C-/> :Commentary<CR>
+nnoremap <C-_> :Commentary<CR>
+vnoremap <C-_> :Commentary<CR>
