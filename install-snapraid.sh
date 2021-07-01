@@ -21,7 +21,7 @@ mkdir ~/temp
 if [[ -n $(command -v apt) ]]
 then
   sudo apt update
-  sudo apt install mergerfs fuse
+  sudo apt install mergerfs fuse wget
   cd ~/temp
   git clone https://github.com/IronicBadger/docker-snapraid.git
   cd docker-snapraid
@@ -37,7 +37,7 @@ then
     echo -e "\nYay must be installed first. Please run install-yay.sh\n"
     exit 1
   else
-    sudo pacman -Syy && yay -S snapraid mergerfs fuse2
+    sudo pacman -Syy && yay -S snapraid mergerfs fuse2 wget
   fi
 
 else
