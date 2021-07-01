@@ -40,6 +40,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'ianks/vim-tsx'
   Plug 'leafgarland/typescript-vim'
   Plug 'jparise/vim-graphql'
+  Plug 'arzh/vim-sh'
 
   " AUTOCOMPLETE ETC
   Plug 'jiangmiao/auto-pairs'                           " Auto pairs
