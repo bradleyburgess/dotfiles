@@ -137,3 +137,6 @@ nnoremap <silent> <C-L> :noh<CR>
 " Ctrl-/ to comment / uncomment
 nnoremap <C-_> :Commentary<CR>
 vnoremap <C-_> :Commentary<CR>
+" leader-/ for ttys
+nnoremap <leader>/ :Commentary<CR>
+vnoremap <leader>/ :Commentary<CR>
