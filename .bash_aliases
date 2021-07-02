@@ -36,6 +36,16 @@ alias tma='tmux attach -t'
 alias tmn='tmux new -s'
 alias tml='tmux ls'
 alias tmk='tmux kill-session -t'
+function tmuxadmin() {
+  cd ~/
+  tmux new-session -d -s admin
+  tmux rename-window -t admin:1 htop
+  tmux new-window -t admin -a -n update
+  tmux new-window -t admin -a -n backup
+  tmux select-window -t admin:1
+  tmux send -t admin:1 htop ENTER
+  tmux attach -t admin
+}
 
 # GIT
 # ============================
