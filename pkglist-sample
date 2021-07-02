@@ -4,6 +4,8 @@
 # nerd-fonts-complete
 # openssh
 # wget
+# rsync
+# mosh
 
 # GUI: i3
 # dmenu
@@ -24,6 +26,7 @@
 # gnome
 # gnome-tweaks
 # gdm
+# gnome-shell-extensions
 #
 # GUI: XFCE4
 # xfce4
@@ -42,6 +45,7 @@
 # gimp
 # gnome-clocks
 # libreoffice
+# nextcloud-client
 # pdftk
 # shotcut
 # shotwell
