@@ -1,3 +1,4 @@
+export editor="nvim"
 export LFS=/mnt/lfs
 alias dropbox='docker exec -it dropbox_personal dropbox '
 alias dropboxesumc='docker exec -it dropbox_esumc dropbox '
