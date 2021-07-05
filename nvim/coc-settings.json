@@ -1,6 +1,6 @@
 {
-  "tsserver.npm": "/home/bradley/.nvm/versions/node/v12.18.4/bin/npm",
-  "eslint.nodePath": "/home/bradley/.nvm/versions/node/v12.18.4/bin/eslint",
+  "tsserver.npm": "/home/bradley/.nvm/versions/node/v14.17.1/bin/npm",
+  "eslint.nodePath": "/home/bradley/.nvm/versions/node/v14.17.1/bin/eslint",
   "yank.enableCompletion": false,
   "javascript.suggestionActions.enabled": false,
   "python.linting.enabled": true,
