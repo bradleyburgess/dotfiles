@@ -33,9 +33,22 @@ alias egrep='egrep --color=auto'
 # TMUX
 # ============================
 alias tma='tmux attach -t'
-alias tmn='tmux new -s'
+# alias tmn='tmux new -s'
 alias tml='tmux ls'
 alias tmk='tmux kill-session -t'
+
+function tmn() {
+  if [[ $1 = "" ]]
+  then
+    tmux new-session
+  elif [[ $1 = "." ]]
+  then
+    tmux new-session -s ${PWD##*/}
+  else
+    tmux new-session -s $1
+  fi
+}
+
 function tmuxadmin() {
   cd ~/
   tmux new-session -d -s admin
