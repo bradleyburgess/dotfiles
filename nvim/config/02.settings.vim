@@ -9,7 +9,8 @@ set nobackup               " No backup
 set nocompatible	         " Enable ViM features
 set noerrorbells           " No sounds
 set undodir=~/.vim/undodir " Undo Directory
-set undofile syntax on
+set undofile
+syntax on
 
 " ===================================================================
 " INTERFACE (highlights, splits, numbers, etc.)
