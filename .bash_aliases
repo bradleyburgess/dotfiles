@@ -70,6 +70,8 @@ alias gl='git log --oneline'  # Log (oneline)
 alias gpull='git pull '       # Pull
 alias gpush='git push '       # Push
 alias gs='git status '        # Status
+alias gbl='git branch --list' # List branches
+alias gbd='git branch -d '    # Delete branch
 
 # SYS TOOLS
 # ============================
