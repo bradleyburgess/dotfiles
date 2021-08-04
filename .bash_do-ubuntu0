@@ -2,4 +2,5 @@
 
 # ALIASES
 alias scan-nextcloud='docker exec --user abc nextcloud php /config/www/nextcloud/occ files:scan --all'
+alias update='sudo apt-get update && sudo apt-get upgrade'
 alias update-containers='cd ~/docker && docker-compose pull --ignore-pull-failures --no-parallel && docker-compose up -d'

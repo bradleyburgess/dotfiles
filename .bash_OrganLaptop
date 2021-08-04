@@ -2,6 +2,7 @@
 # BASH aliases and variables for OrganLaptop
 
 # ALIASES
+alias update='sudo apt-get update && sudo apt-get upgrade'
 alias nvim='~/bin/neovim/usr/bin/nvim'
 
 # PATH

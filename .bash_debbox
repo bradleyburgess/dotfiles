@@ -12,6 +12,7 @@ alias scan-nextcloud='docker exec --user abc nextcloud php /config/www/nextcloud
 alias scan-plex='docker exec plex /usr/lib/plexmediaserver/Plex\ Media\ Scanner --scan'
 alias reboot='sudo systemctl reboot'
 alias shutdown='sudo systemctl shutdown'
+alias update='sudo apt-get update && sudo apt-get upgrade'
 alias update-containers='cd ~/docker && docker-compose pull --ignore-pull-failures && docker-compose up -d'
 
 # ALIASES: Shortcuts
