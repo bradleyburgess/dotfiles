@@ -9,8 +9,9 @@ alias dropbox='docker exec -it dropbox_personal dropbox'
 alias scan-plex='docker exec plex /usr/lib/plexmediaserver/Plex\ Media\ Scanner --scan'
 alias reboot='sudo systemctl reboot'
 alias shutdown='sudo systemctl shutdown'
-alias update='yay -Syu'
-alias update-containers='cd ~/docker && docker-compose pull --ignore-pull-failures && docker-compose up -d'
+# alias update='yay -Syu'
+# alias update-containers='cd ~/docker && docker-compose pull --ignore-pull-failures && docker-compose up -d'
+alias update='~/dotfiles/update'
 
 # NPM COMPLETION
 if type complete &>/dev/null; then
