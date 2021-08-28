@@ -8,6 +8,9 @@ alias nvim='~/bin/neovim/usr/bin/nvim'
 # PATH
 export PATH=$PATH:~/.local/bin
 
+# locale
+. /etc/default/locale
+
 # FUNCTIONS
 function sshl {
   echo
