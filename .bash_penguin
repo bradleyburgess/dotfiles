@@ -1,4 +1,4 @@
 #!/bin/bash
 
 export PATH="$PATH:$HOME/bin:$HOME/bin/appimage"
-alias update='sudo apt-get update && sudo apt-get upgrade'
+alias update='~/dotfiles/update'
