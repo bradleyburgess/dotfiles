@@ -1,10 +1,10 @@
 #!/bin/bash
 
 choices="$(dialog --stdout --checklist "Update" 0 0 0 \
-  1 "update system" off \
-  2 "update containers" off \
-  3 "prune docker images" off)"
-  4 "reboot"
+  1 "update system" on \
+  2 "update containers" on \
+  3 "prune docker images" on \
+  4 "reboot" off )"
 
 for choice in ${choices}; do
   case ${choice} in
