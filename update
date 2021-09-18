@@ -4,6 +4,7 @@ choices="$(dialog --stdout --checklist "Update" 0 0 0 \
   1 "update system" off \
   2 "update containers" off \
   3 "prune docker images" off)"
+  4 "reboot"
 
 for choice in ${choices}; do
   case ${choice} in
@@ -21,11 +22,16 @@ for choice in ${choices}; do
 
     2)
       cd ~/docker
-      docker-compose pull
+      docker-compose pull --no-parallel
       docker-compose up -d
       ;;
 
     3)
       docker image prune
+      ;;
+
+    4)
+      sudo systemctl reboot
+      ;;
   esac;
 done
