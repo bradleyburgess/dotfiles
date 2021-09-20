@@ -6,15 +6,17 @@ choices="$(dialog --stdout --checklist "Update" 0 0 0 \
   3 "prune docker images" on \
   4 "reboot" off )"
 
+LSBLK=$(lsblk -S)
+
 for choice in ${choices}; do
   case ${choice} in
     1)
-      arch="$(command -v yay)"
-      debian="$(command -v apt)"
-      if [ ! $arch == "" ]
+      ARCH="$(command -v yay)"
+      DEBIAN="$(command -v apt)"
+      if [[ -n $ARCH ]]
       then
         yay -Syu
-      elif [ ! $debian == "" ]
+      elif [[ -n $DEBIAN ]]
       then
         sudo apt update && sudo apt upgrade
       fi
@@ -22,7 +24,11 @@ for choice in ${choices}; do
 
     2)
       cd ~/docker
-      docker-compose pull --no-parallel
+      if [[ -n $LSBLK ]]; then
+        docker-compose pull
+      else
+        docker-compose pull --no-parallel
+      fi
       docker-compose up -d
       ;;
 
