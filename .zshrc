@@ -78,6 +78,7 @@ plugins=(
   # docker-compose
   fzf
   git
+  npm
   sudo
   # tmux
   web-search
