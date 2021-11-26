@@ -80,7 +80,7 @@ plugins=(
   git
   npm
   sudo
-  # tmux
+  tmux
   web-search
 )
 
