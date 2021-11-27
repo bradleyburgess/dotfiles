@@ -1,0 +1,73 @@
+#!/bin/bash
+
+function error_msg() {
+  whiptail \
+    --title "System Maintenance" \
+    --msgbox "$1" 0 0
+}
+
+function update_system() {
+  if [[ -n $(command -v yay) ]]
+  then
+    yay -Syu
+  elif [[ -n $(command -v apt) ]]
+  then
+    sudo apt update && sudo apt upgrade
+  else
+    error_msg "ERROR! No package manager detected! Skipping."
+  fi
+}
+
+function update_flatpaks() {
+  if [[ -n $(command -v flatpak) ]]
+  then
+    flatpak update
+  else
+    error_msg "ERROR! Flatpak not detected! Skipping."
+  fi
+}
+
+function update_containers() {
+  if [[ -n $(command -v docker) ]]
+  then
+    cd ~/docker
+    if [[ -n $(lsblk -S) ]]; then
+      docker-compose pull
+    else
+      docker-compose pull --no-parallel
+    fi
+    docker-compose up -d
+  else
+    error_msg "ERROR! Docker not detected! Skipping."
+  fi
+}
+
+function prune_images() {
+  if [[ -n $(command -v docker) ]]
+  then
+    docker image prune
+  else
+    error_msg "ERROR! Docker not detected! Skipping."
+  fi
+}
+
+function reboot() {
+  sudo systemctl reboot
+}
+
+CHOICES=$(whiptail \
+  --title "System Maintenance" \
+  --checklist "Choose your options:" 0 0 0 \
+  "01" "update from repos" on \
+  "02" "update flatpaks" on \
+  "03" "update docker containers" on \
+  "04" "prune docker images" on \
+  "05" "reboot" off \
+  3>&1 1>&2 2>&3)
+
+
+[[ $(echo $CHOICES | grep "01") ]] && update_system;
+[[ $(echo $CHOICES | grep "02") ]] && update_flatpaks;
+[[ $(echo $CHOICES | grep "03") ]] && update_containers;
+[[ $(echo $CHOICES | grep "04") ]] && prune_images;
+[[ $(echo $CHOICES | grep "05") ]] && reboot;

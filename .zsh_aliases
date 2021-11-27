@@ -1,0 +1,31 @@
+alias ll='ls -lah'
+alias publicip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias dropbox='docker exec -it dropbox_personal dropbox '
+alias dropboxesumc='docker exec -it dropbox_esumc dropbox '
+alias scan-plex='docker exec plex /usr/lib/plexmediaserver/Plex\ Media\ Scanner --scan'
+alias reboot='sudo systemctl reboot'
+alias shutdown='sudo systemctl shutdown'
+alias update='~/dotfiles/update'
+
+function tmn() {
+  if [[ $1 = "" ]]
+  then
+    tmux new-session
+  elif [[ $1 = "." ]]
+  then
+    tmux new-session -s ${PWD##*/}
+  else
+    tmux new-session -s $1
+  fi
+}
+
+function tmuxadmin() {
+  cd ~/
+  tmux new-session -d -s admin
+  tmux rename-window -t admin:1 htop
+  tmux new-window -t admin -a -n update
+  tmux new-window -t admin -a -n backup
+  tmux select-window -t admin:1
+  tmux send -t admin:1 htop ENTER
+  tmux attach -t admin
+}

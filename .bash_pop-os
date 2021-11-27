@@ -5,7 +5,6 @@
 
 alias dropbox='docker exec -it dropbox_personal dropbox '
 alias dropboxesumc='docker exec -it dropbox_esumc dropbox '
-alias dropbox='docker exec -it dropbox_personal dropbox'
 alias scan-plex='docker exec plex /usr/lib/plexmediaserver/Plex\ Media\ Scanner --scan'
 alias reboot='sudo systemctl reboot'
 alias shutdown='sudo systemctl shutdown'
