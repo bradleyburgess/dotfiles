@@ -28,12 +28,16 @@ function tmn() {
 }
 
 function tmuxadmin() {
-  cd ~/
-  tmux new-session -d -s admin
-  tmux rename-window -t admin:1 htop
-  tmux new-window -t admin -a -n update
-  tmux new-window -t admin -a -n backup
-  tmux select-window -t admin:1
-  tmux send -t admin:1 htop ENTER
-  tmux attach -t admin
+  if [[ -n $(tmux list-sessions | grep "admin") ]]
+  then
+    tmux attach-session -t admin
+  else
+    tmux new-session -d -s admin
+    tmux rename-window -t admin:1 htop
+    tmux new-window -t admin -a -n update
+    tmux new-window -t admin -a -n backup
+    tmux select-window -t admin:1
+    tmux send -t admin:1 htop ENTER
+    tmux attach -t admin
+  fi
 }
