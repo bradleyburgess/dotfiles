@@ -3,7 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/$USER/.oh-my-zsh"
-export CONFIG_DIR="/home/$USER/dotfiles/configs/zsh"
+export ZSH_CONFIG_DIR="/home/$USER/dotfiles/configs/zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -120,4 +120,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH=$PATH:/home/$USER/dotfiles/scripts
-source $CONFIG_DIR/.zsh_aliases
+source $ZSH_CONFIG_DIR/.zsh_aliases
