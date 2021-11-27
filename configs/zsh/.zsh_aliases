@@ -1,11 +1,18 @@
 alias ll='ls -lah'
 alias publicip='dig +short myip.opendns.com @resolver1.opendns.com'
-alias dropbox='docker exec -it dropbox_personal dropbox '
-alias dropboxesumc='docker exec -it dropbox_esumc dropbox '
+alias dropbox=''
 alias scan-plex='docker exec plex /usr/lib/plexmediaserver/Plex\ Media\ Scanner --scan'
 alias reboot='sudo systemctl reboot'
 alias shutdown='sudo systemctl shutdown'
-alias update='~/dotfiles/update'
+
+function dropbox() {
+  if [[ -z $1 ]]
+  then
+    echo "No arguments supplied."
+    return 1
+  fi
+  docker exec -it dropbox_personal dropbox $@
+}
 
 function tmn() {
   if [[ $1 = "" ]]

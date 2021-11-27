@@ -1,6 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=LXRandR autostart
-Comment=Start xrandr with settings done in LXRandR
-Exec=sh -c 'xrandr --output HDMI-0 --mode 2560x1440 --rate 74.60 --output DVI-I-0 --mode 1680x1050 --rate 59.95 --right-of HDMI-0'
-OnlyShowIn=LXDE

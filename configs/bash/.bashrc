@@ -1,5 +1,7 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 
+export BASH_CONFIG_DIR="/home/$USER/dotfiles/configs/bash"
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -86,15 +88,15 @@ export NVM_DIR="$HOME/.nvm"
 # ===========================================
 # SOURCE BASH CONFIGS
 # ===========================================
-source ~/dotfiles/.bash_aliases        # Source global aliases
-source ~/dotfiles/.bash_prompt         # Set prompt
-source ~/dotfiles/git-completion.bash  # Enable git bash completion
-source ~/dotfiles/tmux-completion.bash # Enable tmux bash completion
+source $BASH_CONFIG_DIR/.bash_aliases        # Source global aliases
+source $BASH_CONFIG_DIR/.bash_prompt         # Set prompt
+source $BASH_CONFIG_DIR/git-completion.bash  # Enable git bash completion
+source $BASH_CONFIG_DIR/tmux-completion.bash # Enable tmux bash completion
 
 # Source FZF config
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f /home/$USER/.fzf.bash ] && source /home/$USER/.fzf.bash
 
 # Source machine-specific settings
-if [ -f ~/dotfiles/.bash_$HOSTNAME ]; then
-    . ~/dotfiles/.bash_$HOSTNAME
+if [ -f $BASH_CONFIG_DIR/.bash_$HOSTNAME ]; then
+    source $BASH_CONFIG_DIR/.bash_$HOSTNAME
 fi
