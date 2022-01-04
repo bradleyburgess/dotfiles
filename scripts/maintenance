@@ -55,6 +55,10 @@ function reboot() {
   sudo systemctl reboot
 }
 
+function update_npm_packages() {
+  npm update -g
+}
+
 CHOICES=$(whiptail \
   --title "System Maintenance" \
   --checklist "Choose your options:" 0 0 0 \
@@ -62,7 +66,8 @@ CHOICES=$(whiptail \
   "02" "update flatpaks" on \
   "03" "update docker containers" on \
   "04" "prune docker images" on \
-  "05" "reboot" off \
+  "05" "update global npm packages" on \
+  "06" "reboot" off \
   3>&1 1>&2 2>&3)
 
 
@@ -70,4 +75,5 @@ CHOICES=$(whiptail \
 [[ $(echo $CHOICES | grep "02") ]] && update_flatpaks;
 [[ $(echo $CHOICES | grep "03") ]] && update_containers;
 [[ $(echo $CHOICES | grep "04") ]] && prune_images;
-[[ $(echo $CHOICES | grep "05") ]] && reboot;
+[[ $(echo $CHOICES | grep "05") ]] && update_npm_packages;
+[[ $(echo $CHOICES | grep "06") ]] && reboot;
