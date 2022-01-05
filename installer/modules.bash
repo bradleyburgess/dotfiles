@@ -73,7 +73,7 @@ install_ohmyzsh () {
     sudo apt install zsh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     mv ~/.zshrc ~/.zshrc_old
-    ln -s ~/dotfiles/.zshrc ~/.zshrc
+    ln -s ~/dotfiles/config/zsh/.zshrc ~/.zshrc
   fi
 }
 
