@@ -180,6 +180,7 @@ install_nerdfonts () {
     unzip ~/temp/FiraCode.zip -d ~/temp/FiraCode
     rm ~/temp/FiraCode/*Windows\ Compatible*
     sudo mkdir -p /usr/local/share/fonts/FiraCode && sudo cp ~/temp/FiraCode/Fira*.ttf /usr/local/share/fonts/FiraCode/
+    fc-cache -f -v
     rm -rf ~/temp/FiraCode
     rm ~/temp/FiraCode.zip
   fi
@@ -243,6 +244,7 @@ install_brother_drivers () {
     mkdir -p ~/temp
     wget -O ~/temp/linux-brother.gz https://download.brother.com/welcome/dlf006893/linux-brprinter-installer-2.2.3-1.gz
     gunzip ~/temp/linux-brother.gz
+    cd ~/temp/linux-brother
     sudo bash ~/temp/linux-brother
     rm ~/temp/linux-brother*
   fi
