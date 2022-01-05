@@ -198,26 +198,26 @@ dconf_settings () {
         --msgbox "dconf is not installed! Skipping."
         return 1;
     fi
-    display_install_step "dconf settings"
-    dconf write /org/gnome/desktop/input-sources/xkb-options "['compose:ralt','caps:swapescape']"
-    dconf write /org/gnome/desktop/interface/clock-show-weekday true
-    dconf write /org/gnome/desktop/interface/clock-show-weekday true
-    dconf write /org/gnome/desktop/interface/enable-hot-corners true
-    dconf write /org/gnome/desktop/interface/monospace-font-name "FiraCode Nerd Font Mono 12"
-    dconf write /org/gnome/gedit/preferences/editor/use-default font false
-    dconf write /org/gnome/nautilus/list-view/default-column-order "['name', 'size', 'type', 'owner', 'group', 'permissions', 'where', 'date_modified', 'date_modified_with_time', 'date_accessed', 'recency', 'starred', 'detailed_type']"
-    dconf write /org/gnome/nautilus/list-view/default-visible-columns "['name', 'size', 'type', 'date_modified', 'starred']"
-    dconf write /org/gnome/nautilus/preferences/default-folder-viewer "list-view"
-    dconf write /org/gnome/nautilus/preferences/search-view "list-view"
-    dconf write /org/gnome/shell/extensions/dash-to-dock/manualhide true
-    dconf write /org/gnome/shell/extensions/pop-shell/active-hint true
-    dconf write /org/gtk/settings/file-chooser/show-hidden true
-    dconf write /org/gtk/settings/file-chooser/show-size-column true
-    dconf write /org/gtk/settings/file-chooser/show-type-column true
-    dconf write /org/gtk/settings/file-chooser/sort-directories-first true
-    dconf write /org/gnome/gedit/preferences/editor-font "Fira Mono 22"
-    dconf write /org/gnome/settings-daemon/plugins/media-keys/volume-down "['<Super>Page_Down']"
-    dconf write /org/gnome/settings-daemon/plugins/media-keys/volume-up "['<Super>Page_Up']"
+    display_install_step "dconf settings";
+    dconf write /org/gnome/desktop/input-sources/xkb-options "['compose:ralt','caps:swapescape']";
+    dconf write /org/gnome/desktop/interface/clock-show-weekday true;
+    dconf write /org/gnome/desktop/interface/clock-show-weekday true;
+    dconf write /org/gnome/desktop/interface/enable-hot-corners true;
+    dconf write /org/gnome/desktop/interface/monospace-font-name "FiraCode Nerd Font Mono 12";
+    dconf write /org/gnome/gedit/preferences/editor/use-default font false;
+    dconf write /org/gnome/nautilus/list-view/default-column-order "['name', 'size', 'type', 'owner', 'group', 'permissions', 'where', 'date_modified', 'date_modified_with_time', 'date_accessed', 'recency', 'starred', 'detailed_type']";
+    dconf write /org/gnome/nautilus/list-view/default-visible-columns "['name', 'size', 'type', 'date_modified', 'starred']";
+    dconf write /org/gnome/nautilus/preferences/default-folder-viewer "list-view";
+    dconf write /org/gnome/nautilus/preferences/search-view "list-view";
+    dconf write /org/gnome/shell/extensions/dash-to-dock/manualhide true;
+    dconf write /org/gnome/shell/extensions/pop-shell/active-hint true;
+    dconf write /org/gtk/settings/file-chooser/show-hidden true;
+    dconf write /org/gtk/settings/file-chooser/show-size-column true;
+    dconf write /org/gtk/settings/file-chooser/show-type-column true;
+    dconf write /org/gtk/settings/file-chooser/sort-directories-first true;
+    dconf write /org/gnome/gedit/preferences/editor-font "Fira Mono 22";
+    dconf write /org/gnome/settings-daemon/plugins/media-keys/volume-down "['<Super>Page_Down']";
+    dconf write /org/gnome/settings-daemon/plugins/media-keys/volume-up "['<Super>Page_Up']";
   fi
 }
 
