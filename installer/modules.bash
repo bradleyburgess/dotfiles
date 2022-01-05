@@ -54,13 +54,13 @@ EOF
 
 install_dotfiles () {
   display_install_step "Dotfiles"
-  if [[ $DRY_RUN == 1 ]]
+  if [[ $DRY_RUN == 1 ]];
   then
     echo "Dry Run: Clone git repo; symlink .bashrc"
   else
     [[ ! -d ~/dotfiles ]] && git clone https://github.com/bradleyburgess/dotfiles.git ~/dotfiles;
-    [[ -f ~/.bashrc ]] mv ~/.bashrc ~/.bashrc_old;
-    ln -s ~/dotfiles/.bashrc ~/.bashrc
+    [[ -f ~/.bashrc ]] && mv ~/.bashrc ~/.bashrc_old;
+    ln -s ~/dotfiles/.bashrc ~/.bashrc;
   fi
 }
 
