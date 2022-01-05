@@ -1,0 +1,4 @@
+#!/bin/bash
+
+IPADDR="$(docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' transmission)"
+watch -t -n 0.5 "transmission-remote $IPADDR:9091 --auth bradley:XjS9CqgWqa@G8j\!J5mmV5eDR -l"

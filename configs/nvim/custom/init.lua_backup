@@ -1,0 +1,77 @@
+-- This is an example init file , its supposed to be placed in /lua/custom dir
+-- lua/custom/init.lua
+
+local utils = require "core.utils"
+local config = utils.load_config()
+local maps = config.mappings
+local plugin_maps = maps.plugins
+
+-- This is where your custom modules and plugins go.
+-- Please check NvChad docs if you're totally new to nvchad + dont know lua!!
+
+local hooks = require "core.hooks"
+
+-- MAPPINGS
+-- To add new plugins, use the "setup_mappings" hook,
+
+hooks.add("setup_mappings", function(map)
+   -- map("n", "<leader>cc", ":Telescope <CR>", opt)
+   -- map("n", "<leader>q", ":q <CR>", opt)
+   local m = plugin_maps.lspconfig
+   map("n", m.declaration, ":lua vim.lsp.buf.declaration()<CR>")
+   map("n", m.definition, ":lua vim.lsp.buf.definition()<CR>")
+   map("n", m.hover, ":lua vim.lsp.buf.hover()<CR>")
+   map("n", m.implementation, ":lua vim.lsp.buf.implementation()<CR>")
+   map("n", m.signature_help, ":lua vim.lsp.buf.signature_help()<CR>")
+   map("n", m.add_workspace_folder, ":lua vim.lsp.buf.add_workspace_folder()<CR>")
+   map("n", m.remove_workspace_folder, ":lua vim.lsp.buf.remove_workspace_folder()<CR>")
+   map("n", m.list_workspace_folders, ":lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>")
+   map("n", m.type_definition, ":lua vim.lsp.buf.type_definition()<CR>")
+   map("n", m.rename, ":lua vim.lsp.buf.rename()<CR>")
+   map("n", m.code_action, ":lua vim.lsp.buf.code_action()<CR>")
+   map("n", m.references, ":lua vim.lsp.buf.references()<CR>")
+   map("n", m.float_diagnostics, ":lua vim.diagnostic.open_float()<CR>")
+   map("n", m.goto_prev, ":lua vim.diagnostic.goto_prev()<CR>")
+   map("n", m.goto_next, ":lua vim.diagnostic.goto_next()<CR>")
+   map("n", m.set_loclist, ":lua vim.diagnostic.setloclist()<CR>")
+   map("n", m.formatting, ":lua vim.lsp.buf.formatting()<CR>")
+end)
+
+-- NOTE : opt is a variable  there (most likely a table if you want multiple options),
+-- you can remove it if you dont have any custom options
+
+-- Install plugins
+-- To add new plugins, use the "install_plugins" hook,
+
+-- examples below:
+
+hooks.add("install_plugins", function(use)
+    use {
+      "williamboman/nvim-lsp-installer",
+      config = function()
+         local lsp_installer = require "nvim-lsp-installer"
+
+         lsp_installer.on_server_ready(function(server)
+            local opts = {}
+
+            server:setup(opts)
+            vim.cmd [[ do User LspAttachBuffers ]]
+         end)
+      end,
+   }
+   use {
+     "tpope/vim-surround"
+   }
+
+   use {
+      "jose-elias-alvarez/null-ls.nvim",
+      after = "nvim-lspconfig",
+      config = function()
+         require("custom..null-ls").setup()
+      end,
+   }
+end)
+
+-- NOTE: we heavily suggest using Packer's lazy loading (with the 'event' field)
+-- see: https://github.com/wbthomason/packer.nvim
+-- https://nvchad.github.io/config/walkthrough
