@@ -191,33 +191,26 @@ dconf_settings () {
   then
     echo "Dry Run: Install dconf settings"
   else
-    if [[ -z $(command -v dconf) ]]
-    then
-      whiptail \
-        --title "Installation: dconf settings" \
-        --msgbox "dconf is not installed! Skipping."
-        return 1;
-    fi
-    display_install_step "dconf settings";
-    gsettings set org.gnome.desktop.input-sources.xkb-options "['compose:ralt','caps:swapescape']";
-    gsettings set org.gnome.desktop.interface.clock-show-weekday true;
-    gsettings set org.gnome.desktop.interface.clock-show-weekday true;
-    gsettings set org.gnome.desktop.interface.enable-hot-corners true;
-    gsettings set org.gnome.desktop.interface.monospace-font-name "FiraCode Nerd Font Mono 12";
-    gsettings set org.gnome.gedit.preferences.editor.use-default font false;
-    gsettings set org.gnome.nautilus.list-view.default-column-order "['name', 'size', 'type', 'owner', 'group', 'permissions', 'where', 'date_modified', 'date_modified_with_time', 'date_accessed', 'recency', 'starred', 'detailed_type']";
-    gsettings set org.gnome.nautilus.list-view.default-visible-columns "['name', 'size', 'type', 'date_modified', 'starred']";
-    gsettings set org.gnome.nautilus.preferences.default-folder-viewer "list-view";
-    gsettings set org.gnome.nautilus.preferences.search-view "list-view";
-    gsettings set org.gnome.shell.extensions.dash-to-dock.manualhide true;
-    gsettings set org.gnome.shell.extensions.pop-shell.active-hint true;
-    gsettings set org.gtk.settings.file-chooser.show-hidden true;
-    gsettings set org.gtk.settings.file-chooser.show-size-column true;
-    gsettings set org.gtk.settings.file-chooser.show-type-column true;
-    gsettings set org.gtk.settings.file-chooser.sort-directories-first true;
-    gsettings set org.gnome.gedit.preferences.editor-font "Fira Mono 22";
-    gsettings set org.gnome.settings-daemon.plugins.media-keys.volume-down "['<Super>Page_Down']";
-    gsettings set org.gnome.settings-daemon.plugins.media-keys.volume-up "['<Super>Page_Up']";
+    [[ -z $(command -v dconf) ]] && whiptail --title "Installation: dconf settings" --msgbox "dconf is not installed! Skipping." && return 1;
+    gsettings set org.gnome.desktop.input-sources xkb-options "['compose:ralt','caps:swapescape']";
+    gsettings set org.gnome.desktop.interface clock-show-weekday true;
+    gsettings set org.gnome.desktop.interface clock-show-weekday true;
+    gsettings set org.gnome.desktop.interface enable-hot-corners true;
+    gsettings set org.gnome.desktop.interface monospace-font-name "FiraCode Nerd Font Mono 12";
+    gsettings set org.gnome.gedit.preferences.editor use-default-font false;
+    gsettings set org.gnome.nautilus.list-view default-column-order "['name', 'size', 'type', 'owner', 'group', 'permissions', 'where', 'date_modified', 'date_modified_with_time', 'date_accessed', 'recency', 'starred', 'detailed_type']";
+    gsettings set org.gnome.nautilus.list-view default-visible-columns "['name', 'size', 'type', 'date_modified', 'starred']";
+    gsettings set org.gnome.nautilus.preferences default-folder-viewer "list-view";
+    gsettings set org.gnome.nautilus.preferences search-view "list-view";
+    gsettings set org.gnome.shell.extensions.dash-to-dock manualhide true;
+    gsettings set org.gnome.shell.extensions.pop-shell active-hint true;
+    gsettings set org.gtk.Settings.FileChooser show-hidden true;
+    gsettings set org.gtk.Settings.FileChooser show-size-column true;
+    gsettings set org.gtk.Settings.FileChooser show-type-column true;
+    gsettings set org.gtk.Settings.FileChooser sort-directories-first true;
+    gsettings set org.gnome.gedit.preferences.editor editor-font "Fira Mono 22";
+    gsettings set org.gnome.settings-daemon.plugins.media-keys volume-down "['<Super>Page_Down']";
+    gsettings set org.gnome.settings-daemon.plugins.media-keys volume-up "['<Super>Page_Up']";
   fi
 }
 
