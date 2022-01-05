@@ -244,7 +244,7 @@ install_brother_drivers () {
     mkdir -p ~/temp
     wget -O ~/temp/linux-brother.gz https://download.brother.com/welcome/dlf006893/linux-brprinter-installer-2.2.3-1.gz
     gunzip ~/temp/linux-brother.gz
-    cd ~/temp/linux-brother
+    mkdir -p ~/dotfiles/brother && cd ~/dotfiles/brother
     sudo bash ~/temp/linux-brother
     rm ~/temp/linux-brother*
   fi
