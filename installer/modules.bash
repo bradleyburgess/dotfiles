@@ -57,11 +57,8 @@ install_dotfiles () {
   then
     echo "Dry Run: Clone git repo; symlink .bashrc"
   else
-    git clone https://github.com/bradleyburgess/dotfiles.git ~/dotfiles  
-    if [[ -f ~/.bashrc ]]
-    then
-      mv ~/.bashrc ~/.bashrc_old
-    fi
+    [[ ! -d ~/dotfiles ]] && git clone https://github.com/bradleyburgess/dotfiles.git ~/dotfiles;
+    [[ -f ~/.bashrc ]] mv ~/.bashrc ~/.bashrc_old;
     ln -s ~/dotfiles/.bashrc ~/.bashrc
   fi
 }
