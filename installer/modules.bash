@@ -60,8 +60,9 @@ install_dotfiles () {
   else
     [[ ! -d ~/dotfiles ]] && git clone https://github.com/bradleyburgess/dotfiles.git ~/dotfiles;
     [[ -f ~/.bashrc ]] && mv ~/.bashrc ~/.bashrc_old;
-    ln -s ~/dotfiles/config/bash/.bashrc ~/.bashrc;
-    ln -s ~/dotfiles/config/vim/.vimrc ~/.vimrc
+    ln -s ~/dotfiles/configs/bash/.bashrc ~/.bashrc;
+    [[ -f ~/.vimrc ]] && mv ~/.vimrc ~/.vimrc_old;
+    ln -s ~/dotfiles/configs/vim/.vimrc ~/.vimrc
   fi
 }
 
@@ -73,8 +74,8 @@ install_ohmyzsh () {
   else
     sudo apt install zsh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    mv ~/.zshrc ~/.zshrc_old
-    ln -s ~/dotfiles/config/zsh/.zshrc ~/.zshrc
+    [[ -f ~/.zshrc ]] && mv ~/.zshrc ~/.zshrc_old;
+    ln -s ~/dotfiles/configs/zsh/.zshrc ~/.zshrc;
   fi
 }
 
@@ -88,7 +89,7 @@ install_tmux () {
     then
       mv ~/.tmux.conf ~/.tmux.conf_old
     fi
-    ln -s dotfiles/config/tmux/.tmux.conf ~/.tmux.conf
+    ln -s dotfiles/configs/tmux/.tmux.conf ~/.tmux.conf
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
     tmux start-server
     tmux new-session -d
@@ -113,7 +114,7 @@ install_neovim () {
       mv ~/.config/nvim ~/.config/nvim_backup
     fi
     git clone https://github.com/NvChad/NvChad ~/.config/nvim
-    ln -s ~/dotfiles/config/nvim/custom ~/.config/nvim/lua/custom
+    ln -s ~/dotfiles/configs/nvim/custom ~/.config/nvim/lua/custom
     nvim +'hi NormalFloat guibg=#1e222a' +PackerSync
     fi
 }
