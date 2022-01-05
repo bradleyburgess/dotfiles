@@ -38,7 +38,8 @@ EOF
       iftop \
       mosh \
       ncdu \
-      openssh \
+      openssh-client \
+      openssh-server \
       pdftk \
       ranger \
       ripgrep \
