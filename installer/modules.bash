@@ -60,7 +60,8 @@ install_dotfiles () {
   else
     [[ ! -d ~/dotfiles ]] && git clone https://github.com/bradleyburgess/dotfiles.git ~/dotfiles;
     [[ -f ~/.bashrc ]] && mv ~/.bashrc ~/.bashrc_old;
-    ln -s ~/dotfiles/.bashrc ~/.bashrc;
+    ln -s ~/dotfiles/config/bash/.bashrc ~/.bashrc;
+    ln -s ~/dotfiles/config/vim/.vimrc ~/.vimrc
   fi
 }
 
@@ -87,7 +88,7 @@ install_tmux () {
     then
       mv ~/.tmux.conf ~/.tmux.conf_old
     fi
-    ln -s dotfiles/.tmux.conf ~/.tmux.conf
+    ln -s dotfiles/config/tmux/.tmux.conf ~/.tmux.conf
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
     tmux start-server
     tmux new-session -d
