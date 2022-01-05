@@ -215,7 +215,7 @@ dconf_settings () {
     dconf write /org/gtk/settings/file-chooser/show-size-column true
     dconf write /org/gtk/settings/file-chooser/show-type-column true
     dconf write /org/gtk/settings/file-chooser/sort-directories-first true
-    dcont write /org/gnome/gedit/preferences/editor-font "Fira Mono 22"
+    dconf write /org/gnome/gedit/preferences/editor-font "Fira Mono 22"
     dconf write /org/gnome/settings-daemon/plugins/media-keys/volume-down "['<Super>Page_Down']"
     dconf write /org/gnome/settings-daemon/plugins/media-keys/volume-up "['<Super>Page_Up']"
   fi
