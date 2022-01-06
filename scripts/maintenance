@@ -6,12 +6,16 @@ function error_msg() {
     --msgbox "$1" 0 0
 }
 
+function get_latest_release() {
+  curl --silent "https://api.github.com/repos/$1/releases/latest" |
+    grep '"tag_name":' |
+    sed -E 's/.*"([^"]+)".*/\1/'
+}
+
 function update_system() {
-  if [[ -n $(command -v yay) ]]
-  then
+  if [[ -n $(command -v yay) ]]; then
     yay -Syu
-  elif [[ -n $(command -v apt) ]]
-  then
+  elif [[ -n $(command -v apt) ]]; then
     sudo apt update && sudo apt upgrade
   else
     error_msg "ERROR! No package manager detected! Skipping."
@@ -19,8 +23,7 @@ function update_system() {
 }
 
 function update_flatpaks() {
-  if [[ -n $(command -v flatpak) ]]
-  then
+  if [[ -n $(command -v flatpak) ]]; then
     flatpak update
   else
     error_msg "ERROR! Flatpak not detected! Skipping."
@@ -28,8 +31,7 @@ function update_flatpaks() {
 }
 
 function update_containers() {
-  if [[ -n $(command -v docker) ]]
-  then
+  if [[ -d ~/docker ]]; then
     cd ~/docker
     if [[ -n $(lsblk -S) ]]; then
       docker-compose pull
@@ -38,36 +40,45 @@ function update_containers() {
     fi
     docker-compose up -d
   else
-    error_msg "ERROR! Docker not detected! Skipping."
+    error_msg "ERROR! Docker directory not detected! Skipping."
   fi
 }
 
 function prune_images() {
-  if [[ -n $(command -v docker) ]]
-  then
+  if [[ -n $(command -v docker) ]]; then
     docker image prune
   else
     error_msg "ERROR! Docker not detected! Skipping."
   fi
 }
 
-function reboot() {
-  sudo systemctl reboot
-}
-
 function update_npm_packages() {
   npm update -g
 }
 
+function update_neovim() {
+  if [[ -n $(command -v nvim) ]]; then
+    if [[ $(get_latest_release neovim/neovim) != $(nvim --version | grep -Po "v(\d+\.)+\d+") ]]; then
+      sudo wget -O /usr/bin/nvim.appimage https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
+      sudo chmod +x /usr/bin/nvim.appimage
+    fi
+  fi
+}
+
+function reboot() {
+  sudo systemctl reboot
+}
+  
 CHOICES=$(whiptail \
   --title "System Maintenance" \
   --checklist "Choose your options:" 0 0 0 \
-  "01" "update from repos" on \
+  "01" "update from distro repos" on \
   "02" "update flatpaks" on \
   "03" "update docker containers" on \
   "04" "prune docker images" on \
   "05" "update global npm packages" on \
-  "06" "reboot" off \
+  "06" "update neovim appimage" on \
+  "07" "reboot" off \
   3>&1 1>&2 2>&3)
 
 

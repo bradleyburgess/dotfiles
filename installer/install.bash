@@ -1,11 +1,10 @@
 #!/bin/bash
 
-source ./lib.bash
-source ./modules.bash
+source lib.bash
+source modules.bash
 
 DRY_RUN="1"
-if (whiptail --title "Dry Run?" --yesno "Perform Dry Run?" 0 0);
-then
+if (whiptail --title "Dry Run?" --yesno "Perform Dry Run?" 0 0); then
   DRY_RUN="1";
 else
   DRY_RUN="0";

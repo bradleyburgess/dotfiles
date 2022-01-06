@@ -1,8 +1,6 @@
 #!/bin/bash
 
-TEST_LOCATION="/home/$USER/temp/installer-test"
-[[ $DRY_RUN == 1 ]] && mkdir -p $TEST_LOCATION
-source ./lib.bash
+source lib.bash
 
 install_baseutils () {
   display_install_step "Base Utils"
@@ -109,14 +107,15 @@ install_neovim () {
     sudo ln -s /usr/bin/nvim.appimage /usr/bin/nvim
     sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 50
     sudo select-editor
-    if [[ -d "~/.config/nvim" ]]
-    then
-      mv ~/.config/nvim ~/.config/nvim_backup
-    fi
+    [[ -d "~/.config/nvim" ]] && mv ~/.config/nvim ~/.config/nvim_backup
     git clone https://github.com/NvChad/NvChad ~/.config/nvim
     ln -s ~/dotfiles/configs/nvim/custom ~/.config/nvim/lua/custom
     nvim +'hi NormalFloat guibg=#1e222a' +PackerSync
-    fi
+  fi
+}
+
+install_nvchad () {
+
 }
 
 install_fzf () {
