@@ -6,6 +6,12 @@ function error_msg() {
     --msgbox "$1" 0 0
 }
 
+function pre_msg() {
+  echo -e "\n=============================="
+  echo -e "$1"
+  echo -e "=============================="
+}
+
 function get_latest_release() {
   curl --silent "https://api.github.com/repos/$1/releases/latest" |
     grep '"tag_name":' |
@@ -58,9 +64,14 @@ function update_npm_packages() {
 
 function update_neovim() {
   if [[ -n $(command -v nvim) ]]; then
-    if [[ $(get_latest_release neovim/neovim) != $(nvim --version | grep -Po "v(\d+\.)+\d+") ]]; then
+    LATEST_RELEASE=$(get_latest_release neovim/neovim)
+    INSTALLED_RELEASE=$(nvim --version | grep -Po "v(\d+\.)+\d+")
+    if [[ $LATEST_RELEASE != $INSTALLED_RELEASE ]]; then
+      echo "Downloading latest release ($LATEST_RELEASE)"
       sudo wget -O /usr/bin/nvim.appimage https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
       sudo chmod +x /usr/bin/nvim.appimage
+    else
+      echo "NeoVim already up to date ($INSTALLED_RELEASE)"
     fi
   fi
 }
@@ -82,9 +93,12 @@ CHOICES=$(whiptail \
   3>&1 1>&2 2>&3)
 
 
-[[ $(echo $CHOICES | grep "01") ]] && update_system;
-[[ $(echo $CHOICES | grep "02") ]] && update_flatpaks;
-[[ $(echo $CHOICES | grep "03") ]] && update_containers;
-[[ $(echo $CHOICES | grep "04") ]] && prune_images;
-[[ $(echo $CHOICES | grep "05") ]] && update_npm_packages;
-[[ $(echo $CHOICES | grep "06") ]] && reboot;
+[[ $(echo $CHOICES | grep "01") ]] && pre_msg "Updating packages..." && update_system;
+[[ $(echo $CHOICES | grep "02") ]] && pre_msg "Updating flatpaks..." && update_flatpaks;
+[[ $(echo $CHOICES | grep "03") ]] && pre_msg "Updating containers..." && update_containers;
+[[ $(echo $CHOICES | grep "04") ]] && pre_msg "Pruning docker images..." && prune_images;
+[[ $(echo $CHOICES | grep "05") ]] && pre_msg "Updating NPM packages..." && update_npm_packages;
+[[ $(echo $CHOICES | grep "06") ]] && pre_msg "Updating NeoVim..." && update_neovim;
+[[ $(echo $CHOICES | grep "07") ]] && pre_msg "Rebooting..." && reboot;
+
+echo -e "\nDone!\n\n\n"
