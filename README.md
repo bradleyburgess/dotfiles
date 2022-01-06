@@ -7,7 +7,7 @@ Repo for my dotfiles and install / maintenance scripts.
 To install the dotfiles, run the following command:
 
 ```
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/bradleyburgess/dotfiles/main/scripts/installer/install.bash)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/bradleyburgess/dotfiles/main/scripts/installer/install-dotfiles.bash)"
 ```
 
 ## Maintenance
