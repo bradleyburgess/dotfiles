@@ -1,9 +1,9 @@
 #!/bin/bash
 
 if [[ -z $(command -v git) ]] || \
-   [[ -z $(command -v whiptail)]] || \
-   [[ -z $(command -v curl)]] || \
-   [[ -z $(command -v wget)]]; then
+   [[ -z $(command -v whiptail) ]] || \
+   [[ -z $(command -v curl) ]] || \
+   [[ -z $(command -v wget) ]]; then
 cat << EOF
 Please install dependencies first:
 
