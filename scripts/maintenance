@@ -67,7 +67,7 @@ function update_neovim() {
     LATEST_RELEASE=$(get_latest_release neovim/neovim)
     INSTALLED_RELEASE=$(nvim --version | grep -Po "v(\d+\.)+\d+")
     if [[ $LATEST_RELEASE != $INSTALLED_RELEASE ]]; then
-      echo "Downloading latest release ($LATEST_RELEASE)"
+      echo "Updating: $INSTALLED_RELEASE --> $LATEST_RELEASE ..."
       sudo wget -O /usr/bin/nvim.appimage https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
       sudo chmod +x /usr/bin/nvim.appimage
     else
