@@ -1,24 +1,34 @@
-# dotfiles
+# My dotfiles
 
-Repo for my dotfiles and install scripts.
+Repo for my dotfiles and install / maintenance scripts.
 
-- install-dotfiles
-- install-docker
-- install-snapraid (+ mergerfs for media server)
-- install yay (for arch AUR)
-- install packages (for commonly-used packages)
+## Installation
 
-#### install-dotfiles
+To install the dotfiles, run the following command:
 
-- bashrc
-- bash aliases
-- tmux conig, tpm and plugins
-- nvm and node lts
-- neovim configs, including vim-plug and plugins
-- fzf
-- i3 and i3status configs, if installed
+```
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/bradleyburgess/dotfiles/main/scripts/installer/install.bash)"
+```
 
-#### auto-detects package manager
+## Maintenance
 
-`install-docker` and `install-packages` auto-detect the package manager (`apt`
-or `pacman`) for convenience.
+There is a system maintenance script for:
+
+- updating system packages from distro repos
+- updating flatpaks from flathub
+- updating docker containers in `~/docker/docker-compose.yml`
+- pruning docker images
+- updating `neovim` appimage
+- updating global `npm` packages
+
+The script is put in `PATH`, so it can be run from anywhere with `maintenance`.
+
+## Info
+
+### NeoVim
+
+`neovim` config is based on [NvChad](https://nvchad.github.io), but includes a few other plugins, bindings, and configs.
+
+### Oh My Zsh!
+
+`zsh` and `ohmyzsh` can be installed, and there are some default plugins enabled, as well as some bindings and so on in `.zshrc`.

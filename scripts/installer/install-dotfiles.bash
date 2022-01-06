@@ -1,7 +1,26 @@
 #!/bin/bash
 
-source lib.bash
-source modules.bash
+if [[ -z $(command -v git) ]] || \
+   [[ -z $(command -v whiptail)]] || \
+   [[ -z $(command -v curl)]] || \
+   [[ -z $(command -v wget)]]; then
+cat << EOF
+Please install dependencies first:
+
+curl
+git
+wget
+whiptail
+
+EOF
+exit 1
+fi
+
+echo -e "\nCloning repo...\n"
+[[ ! -d ~/dotfiles ]] && git clone --depth 1 https://github.com/bradleyburgess/dotfiles.git ~/dotfiles;
+
+source ~/dotfiles/scripts/installer/lib.bash
+source ~/dotfiles/scripts/installer/modules.bash
 
 DRY_RUN="1"
 if (whiptail --title "Dry Run?" --yesno "Perform Dry Run?" 0 0); then

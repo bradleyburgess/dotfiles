@@ -33,15 +33,13 @@ function get_latest_release() {
 function display_install_step() {
   TITLE=$1
   TEXT=""
-  if [[ -n $2 ]]
-  then
+  if [[ -n $2 ]]; then
     TEXT=$2
   else
     TEXT=$1
   fi
 
-  if [[ $DRY_RUN == 1 ]]
-  then
+  if [[ $DRY_RUN == 1 ]]; then
     whiptail \
       --title "DRY RUN MODE. Installation: $TITLE" \
       --msgbox "DRY RUN MODE.\nWe will now install $TEXT" 0 0

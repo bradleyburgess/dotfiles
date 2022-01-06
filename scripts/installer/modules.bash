@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source lib.bash
+source ~/dotfiles/scripts/installer/lib.bash
 
 install_baseutils () {
   display_install_step "Base Utils"
@@ -56,7 +56,6 @@ install_dotfiles () {
   then
     echo "Dry Run: Clone git repo; symlink .bashrc"
   else
-    [[ ! -d ~/dotfiles ]] && git clone https://github.com/bradleyburgess/dotfiles.git ~/dotfiles;
     [[ -f ~/.bashrc ]] && mv ~/.bashrc ~/.bashrc_old;
     ln -s ~/dotfiles/configs/bash/.bashrc ~/.bashrc;
     [[ -f ~/.vimrc ]] && mv ~/.vimrc ~/.vimrc_old;
