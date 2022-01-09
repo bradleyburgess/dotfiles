@@ -6,6 +6,14 @@ alias scan-plex='docker exec plex /usr/lib/plexmediaserver/Plex\ Media\ Scanner 
 alias reboot='sudo systemctl reboot'
 alias shutdown='sudo systemctl shutdown'
 
+function npmlatest() {
+  npm show $1 | grep latest
+}
+
+function dockerip() {
+  docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $1
+}
+
 function dropbox() {
   if [[ -z $1 ]]
   then
