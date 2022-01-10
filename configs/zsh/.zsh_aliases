@@ -35,6 +35,8 @@ function tmn() {
   fi
 }
 
+alias tml='tmux list-sessions'
+
 function tmuxadmin() {
   if [[ -n $(tmux list-sessions | grep "admin") ]]
   then
