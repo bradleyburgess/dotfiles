@@ -9,15 +9,12 @@ install_baseutils () {
     cat << EOF
 Dry Run:
   sudo apt update && sudo apt upgrade && sudo apt install \\
-    baobab \\
     curl \\
-    gparted \\
     htop \\
     iftop \\
     mosh \\
     ncdu \\
     openssh \\
-    pdftk \\
     ranger \\
     ripgrep \\
     rsync \\
@@ -29,16 +26,13 @@ Dry Run:
 EOF
   else
     sudo apt update && sudo apt upgrade && sudo apt install \
-      baobab \
       curl \
-      gparted \
       htop \
       iftop \
       mosh \
       ncdu \
       openssh-client \
       openssh-server \
-      pdftk \
       ranger \
       ripgrep \
       rsync \
