@@ -26,7 +26,12 @@ Dry Run:
 EOF
   else
     sudo apt update && sudo apt upgrade && sudo apt install \
+      bat \
       curl \
+      duf \
+      exa \
+      fd-find \
+      httpie \
       htop \
       iftop \
       mosh \
