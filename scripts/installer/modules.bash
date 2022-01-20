@@ -58,6 +58,8 @@ install_dotfiles () {
     [[ -f ~/.bashrc ]] && mv ~/.bashrc ~/.bashrc_old;
     ln -s ~/dotfiles/configs/bash/.bashrc ~/.bashrc;
     [[ -f ~/.vimrc ]] && mv ~/.vimrc ~/.vimrc_old;
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     ln -s ~/dotfiles/configs/vim/.vimrc ~/.vimrc
   fi
 }
