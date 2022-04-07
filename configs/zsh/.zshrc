@@ -135,3 +135,7 @@ source "/home/bradley/.fzf/shell/key-bindings.zsh"
 
 export PATH=$PATH:/home/$USER/dotfiles/scripts
 source $ZSH_CONFIG_DIR/.zsh_aliases
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
+export LESS=' -R '
