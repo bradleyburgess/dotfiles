@@ -16,7 +16,7 @@ call plug#begin("~/.vim/plugged")
   " UNUSED
   
   " GENERAL
-  Plug 'kien/ctrlp.vim'                               " Ctrl-P (like VS Code)
+  Plug 'ctrlpvim/ctrlp.vim'                               " Ctrl-P (like VS Code)
   Plug 'tpope/vim-sensible'                           " Sensible defaults
   Plug 'airblade/vim-rooter'                            " Project-based search
   Plug 'mbbill/undotree'                                " Undo tree
