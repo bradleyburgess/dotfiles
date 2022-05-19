@@ -232,7 +232,11 @@ install_flatpaks () {
     display_install_step "Flatpak Apps"
     flatpak install -y flathub \
       org.chromium.Chromium \
-      org.chromium.Chromium.Codecs
+      org.chromium.Chromium.Codecs \
+      com.bitwarden.desktop |
+      com.spotify.Client \
+      org.shotcut.Shotcut \
+      org.raspberrypi.rpi-imager
   fi
 }
 
