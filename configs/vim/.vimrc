@@ -130,12 +130,6 @@ au BufNewFile,BufRead,BufEnter *.ts setlocal filetype=typescript
 au BufNewFile,BufRead,BufEnter *.ts setlocal indentexpr=GetTypescriptIndent()
 au BufNewFile,BufRead,BufEnter *.tsx setlocal filetype=typescriptreact
 
-" Read all JS as JSX
-augroup filetype_jsx
-    autocmd!
-    autocmd FileType javascript set filetype=javascriptreact
-augroup END
-
 " ===================================================================
 " LANGUAGE: JSON
 " ===================================================================
