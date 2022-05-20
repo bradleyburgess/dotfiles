@@ -22,6 +22,7 @@ Dry Run:
     tmux \\
     tree \\
     unzip \\
+    vim \\
     wget
 EOF
   else
@@ -45,6 +46,7 @@ EOF
       tmux \
       tree \
       unzip \
+      vim \
       wget
   fi
 }
@@ -112,10 +114,6 @@ install_neovim () {
     ln -s ~/dotfiles/configs/nvim/custom ~/.config/nvim/lua/custom
     nvim +'hi NormalFloat guibg=#1e222a' +PackerSync
   fi
-}
-
-install_nvchad () {
-
 }
 
 install_fzf () {
@@ -233,7 +231,7 @@ install_flatpaks () {
     flatpak install -y flathub \
       org.chromium.Chromium \
       org.chromium.Chromium.Codecs \
-      com.bitwarden.desktop |
+      com.bitwarden.desktop \
       com.spotify.Client \
       org.shotcut.Shotcut \
       org.raspberrypi.rpi-imager
