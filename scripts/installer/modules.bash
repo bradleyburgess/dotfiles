@@ -15,10 +15,12 @@ Dry Run:
     mosh \\
     ncdu \\
     openssh \\
+    pdfgrep \\
     ranger \\
     ripgrep \\
     rsync \\
     silversearcher-ag \\
+    tldr \\
     tmux \\
     tree \\
     unzip \\
@@ -39,10 +41,12 @@ EOF
       ncdu \
       openssh-client \
       openssh-server \
+      pdfgrep \
       ranger \
       ripgrep \
       rsync \
       silversearcher-ag \
+      tldr \
       tmux \
       tree \
       unzip \
