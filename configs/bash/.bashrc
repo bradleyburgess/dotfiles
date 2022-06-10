@@ -102,4 +102,6 @@ export PATH=$PATH:/home/$USER/dotfiles/scripts
 if [ -f $BASH_CONFIG_DIR/.bash_$HOSTNAME ]; then
     source $BASH_CONFIG_DIR/.bash_$HOSTNAME
 fi
-. "$HOME/.cargo/env"
+#. "$HOME/.cargo/env"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

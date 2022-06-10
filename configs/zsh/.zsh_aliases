@@ -2,9 +2,9 @@
 
 alias ll='ls -lah'
 alias publicip='dig +short myip.opendns.com @resolver1.opendns.com'
-alias scan-plex='docker exec plex /usr/lib/plexmediaserver/Plex\ Media\ Scanner --scan'
-alias reboot='sudo systemctl reboot'
-alias shutdown='sudo systemctl shutdown'
+alias reboot='systemctl reboot'
+alias shutdown='systemctl shutdown'
+alias suspend='systemctl suspend'
 
 function npmlatest() {
   npm show $1 | grep latest
@@ -44,8 +44,6 @@ function tmuxadmin() {
   else
     tmux new-session -d -s admin
     tmux rename-window -t admin:1 htop
-    tmux new-window -t admin -a -n update
-    tmux new-window -t admin -a -n backup
     tmux select-window -t admin:1
     tmux send -t admin:1 htop ENTER
     tmux attach -t admin
