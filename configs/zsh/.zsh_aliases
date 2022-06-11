@@ -49,3 +49,24 @@ function tmuxadmin() {
     tmux attach -t admin
   fi
 }
+
+function tmuxdev() {
+  DIRECTORY=${PWD##*/}
+  if [[ -n $(tmux list-sessions | grep "${DIRECTORY} :") ]]
+  then
+    printf "Tmux session ${DIRECTORY} already exists! Exiting."
+    tmux attach-session -t ${DIRECTORY}
+  else
+    xdotool key super+s
+    tmux new-session -d -s ${DIRECTORY}
+    tmux rename-window -t ${DIRECTORY}:1 dev-server
+    tmux new-window -t ${DIRECTORY} -a -n "git/bash"
+    tmux new-window -t ${DIRECTORY} -a -n "ranger"
+    tmux send -t ${DIRECTORY}:ranger ranger ENTER
+    tmux send -t ${DIRECTORY}:dev-server code Space . ENTER
+    tmux select-window -t ${DIRECTORY}:dev-server
+    tmux attach -t ${DIRECTORY}
+    xdotool key super+w
+    xdotool search --name "Visual Studio Code" windowfocus
+  fi
+}
