@@ -145,7 +145,8 @@ au BufNewFile,BufRead,BufEnter tsconfig.* setlocal commentstring=//\ %s
 let g:vim_markdown_conceal = 0              " Disable markdown conceal
 let g:vim_markdown_conceal_code_blocks = 0  "
 let g:vim_markdown_conceal_links = 0        "
-let g:vim_markdown_folding_level = 2        " Fold to heading level 2
+let g:vim_markdown_folding_level = 0        " Fold to heading level 0
+" let g:vim_markdown_folding_level = 2        " Fold to heading level 2
 
 " ===================================================================
 " KEY BINDINGS
