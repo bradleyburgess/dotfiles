@@ -52,6 +52,9 @@ EOF
       unzip \
       vim \
       wget
+    mkdir -p $USER/bin
+    wget https://github.com/ko1nksm/shdotenv/releases/latest/download/shdotenv -O $HOME/bin/shdotenv
+    chmod +x $HOME/bin/shdotenv
   fi
 }
 
