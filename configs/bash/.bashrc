@@ -93,7 +93,7 @@ source $BASH_CONFIG_DIR/.bash_prompt         # Set prompt
 source $BASH_CONFIG_DIR/git-completion.bash  # Enable git bash completion
 source $BASH_CONFIG_DIR/tmux-completion.bash # Enable tmux bash completion
 
-export PATH=$PATH:/home/$USER/dotfiles/scripts
+export PATH=$PATH:/home/$USER/bin:/home/$USER/dotfiles/scripts
 
 # Source FZF config
 [ -f /home/$USER/.fzf.bash ] && source /home/$USER/.fzf.bash
