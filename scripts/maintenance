@@ -1,5 +1,7 @@
 #!/bin/bash
 
+eval "$(shdotenv -e ~/maintenance.env)"
+
 function error_msg() {
   whiptail \
     --title "System Maintenance" \
@@ -83,13 +85,13 @@ function reboot() {
 CHOICES=$(whiptail \
   --title "System Maintenance" \
   --checklist "Choose your options:" 0 0 0 \
-  "01" "update from distro repos" on \
-  "02" "update flatpaks" on \
-  "03" "update docker containers" on \
-  "04" "prune docker images" on \
-  "05" "update global npm packages" on \
-  "06" "update neovim appimage" on \
-  "07" "reboot" off \
+  "01" "update from distro repos" ${M_DISTRO:-on} \
+  "02" "update flatpaks" ${M_FLATPAK:-off} \
+  "03" "update docker containers" ${M_DOCKER_CONTAINERS:-off} \
+  "04" "prune docker images" ${M_DOCKER_PRUNE:-off} \
+  "05" "update global npm packages" ${M_GLOBAL_NPM:-off} \
+  "06" "update neovim appimage" ${M_NVIM_APPIMAGE:-off} \
+  "07" "reboot" ${M_REBOOT:-off} \
   3>&1 1>&2 2>&3)
 
 
