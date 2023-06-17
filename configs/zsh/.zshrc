@@ -125,13 +125,16 @@ if [[ ! "$PATH" == */home/$USER/.fzf/bin* ]]; then
   export PATH="${PATH:+${PATH}:}/home/$USER/.fzf/bin"
 fi
 
+# FZF
 # Auto-completion
 # ---------------
 [[ $- == *i* ]] && source "/home/$USER/.fzf/shell/completion.zsh" 2> /dev/null
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Key bindings
 # ------------
-source "/home/$USER/.fzf/shell/key-bindings.zsh"
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+[[ -f /home/$USER/.fzf/shell/key-bindings.sh ]] && source "/home/$USER/.fzf/shell/key-bindings.zsh"
 
 export PATH=$PATH:/home/$USER/bin:/home/$USER/dotfiles/scripts
 source $ZSH_CONFIG_DIR/.zsh_aliases
@@ -140,7 +143,13 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Addition .zshrc config
 source ~/dotfiles/configs/zsh/.zsh_aliases
+[[ -f ~/.zshrc_local ]] && source ~/.zshrc_local
 
-[[ -f ~/.zshrc_local ]] source ~/.zshrc_local
+
+alias ll='ls -lha'
+
+# LESS SYNTAX HIGHLIGHTING
+export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
+export LESS=' -R '
