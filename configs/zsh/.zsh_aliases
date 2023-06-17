@@ -1,6 +1,5 @@
 #!/bin/zsh
 
-alias ll='ls -lah'
 alias publicip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias reboot='systemctl reboot'
 alias shutdown='systemctl shutdown'
@@ -14,59 +13,61 @@ function dockerip() {
   docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $1
 }
 
-function dropbox() {
-  if [[ -z $1 ]]
-  then
-    echo "No arguments supplied."
-    return 1
-  fi
-  docker exec -it dropbox_personal dropbox "$@"
-}
+# function dropbox() {
+#   if [[ -z $1 ]]
+#   then
+#     echo "No arguments supplied."
+#     return 1
+#   fi
+#   docker exec -it dropbox_personal dropbox "$@"
+# }
 
-function tmn() {
-  if [[ $1 = "" ]]
-  then
-    tmux new-session
-  elif [[ $1 = "." ]]
-  then
-    tmux new-session -s ${PWD##*/}
-  else
-    tmux new-session -s $1
-  fi
-}
+# OLD TMUX ALIASES ------------------------------------------------------------
 
-alias tml='tmux list-sessions'
+# function tmn() {
+#   if [[ $1 = "" ]]
+#   then
+#     tmux new-session
+#   elif [[ $1 = "." ]]
+#   then
+#     tmux new-session -s ${PWD##*/}
+#   else
+#     tmux new-session -s $1
+#   fi
+# }
 
-function tmuxadmin() {
-  if [[ -n $(tmux list-sessions | grep "admin") ]]
-  then
-    tmux attach-session -t admin
-  else
-    tmux new-session -d -s admin
-    tmux rename-window -t admin:1 htop
-    tmux select-window -t admin:1
-    tmux send -t admin:1 htop ENTER
-    tmux attach -t admin
-  fi
-}
+# alias tml='tmux list-sessions'
 
-function tmuxdev() {
-  DIRECTORY=${PWD##*/}
-  if [[ -n $(tmux list-sessions | grep "${DIRECTORY} :") ]]
-  then
-    printf "Tmux session ${DIRECTORY} already exists! Exiting."
-    tmux attach-session -t ${DIRECTORY}
-  else
-    xdotool key super+s
-    tmux new-session -d -s ${DIRECTORY}
-    tmux rename-window -t ${DIRECTORY}:1 dev-server
-    tmux new-window -t ${DIRECTORY} -a -n "git/bash"
-    tmux new-window -t ${DIRECTORY} -a -n "ranger"
-    tmux send -t ${DIRECTORY}:ranger ranger ENTER
-    tmux send -t ${DIRECTORY}:dev-server code Space . ENTER
-    tmux select-window -t ${DIRECTORY}:dev-server
-    tmux attach -t ${DIRECTORY}
-    xdotool key super+w
-    xdotool search --name "Visual Studio Code" windowfocus
-  fi
-}
+# function tmuxadmin() {
+#   if [[ -n $(tmux list-sessions | grep "admin") ]]
+#   then
+#     tmux attach-session -t admin
+#   else
+#     tmux new-session -d -s admin
+#     tmux rename-window -t admin:1 htop
+#     tmux select-window -t admin:1
+#     tmux send -t admin:1 htop ENTER
+#     tmux attach -t admin
+#   fi
+# }
+
+# function tmuxdev() {
+#   DIRECTORY=${PWD##*/}
+#   if [[ -n $(tmux list-sessions | grep "${DIRECTORY} :") ]]
+#   then
+#     printf "Tmux session ${DIRECTORY} already exists! Exiting."
+#     tmux attach-session -t ${DIRECTORY}
+#   else
+#     xdotool key super+s
+#     tmux new-session -d -s ${DIRECTORY}
+#     tmux rename-window -t ${DIRECTORY}:1 dev-server
+#     tmux new-window -t ${DIRECTORY} -a -n "git/bash"
+#     tmux new-window -t ${DIRECTORY} -a -n "ranger"
+#     tmux send -t ${DIRECTORY}:ranger ranger ENTER
+#     tmux send -t ${DIRECTORY}:dev-server code Space . ENTER
+#     tmux select-window -t ${DIRECTORY}:dev-server
+#     tmux attach -t ${DIRECTORY}
+#     xdotool key super+w
+#     xdotool search --name "Visual Studio Code" windowfocus
+#   fi
+# }

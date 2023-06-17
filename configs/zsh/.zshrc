@@ -140,10 +140,7 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
 
-# GOLANG
-export PATH="$PATH:/usr/local/go/bin"
-export GOPATH=$HOME/go
-export GOPATH=$GOPATH:$HOME/Projects/golang
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source ~/dotfiles/configs/zsh/.zsh_aliases
+
+[[ -f ~/.zshrc_local ]] source ~/.zshrc_local
