@@ -133,7 +133,7 @@ fi
 
 # Key bindings
 # ------------
-source /usr/share/doc/fzf/examples/key-bindings.zsh
+[[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]] && source /usr/share/doc/fzf/examples/key-bindings.zsh
 [[ -f /home/$USER/.fzf/shell/key-bindings.sh ]] && source "/home/$USER/.fzf/shell/key-bindings.zsh"
 
 export PATH=$PATH:/home/$USER/bin:/home/$USER/dotfiles/scripts
