@@ -46,6 +46,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'tpope/vim-repeat'                               " Extended repeat func
   Plug 'tpope/vim-surround'                             " Surround
   Plug 'godlygeek/tabular'                              " Alignment
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
   " FILE MANAGEMENT
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }   " Fuzzy Finder
