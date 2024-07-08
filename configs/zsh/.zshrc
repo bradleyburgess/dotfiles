@@ -72,11 +72,12 @@ zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  asdf
   colored-man-pages
   colorize
   cp
-  # docker
-  # docker-compose
+  docker
+  docker-compose
   fzf
   git
   npm
@@ -143,6 +144,12 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
 
+# add LaTeX to PATH
+export PATH="/usr/local/texlive/2024/bin/x86_64-linux/:$PATH"
+
+# add composer bin to PATH
+export PATH=$PATH:$HOME/.config/composer/vendor/bin
+
 # Addition .zshrc config
 source ~/dotfiles/configs/zsh/.zsh_aliases
 [[ -f ~/.zshrc_local ]] && source ~/.zshrc_local
@@ -153,3 +160,5 @@ alias ll='ls -lha'
 # LESS SYNTAX HIGHLIGHTING
 export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
+
+[[ -f /home/$USER/.zshrc_local ]] && source /home/$USER/.zshrc_local
