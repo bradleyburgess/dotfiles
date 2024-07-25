@@ -1,6 +1,7 @@
 #!/bin/zsh
 
-alias publicip='dig +short myip.opendns.com @resolver1.opendns.com'
+# alias publicip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias publicip='ifconfig.me'
 alias reboot='systemctl reboot'
 alias shutdown='systemctl shutdown'
 alias suspend='systemctl suspend'
@@ -13,6 +14,23 @@ function dockerip() {
   docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $1
 }
 
+function tmn() {
+  if [[ $1 = "" ]]
+  then
+    tmux new-session
+  elif [[ $1 = "." ]]
+  then
+    tmux new-session -s ${PWD##*/}
+  else
+    tmux new-session -s $1
+  fi
+}
+
+alias tml='tmux list-sessions'
+
+
+# OLD ALIASES ------------------------------------------------------------
+
 # function dropbox() {
 #   if [[ -z $1 ]]
 #   then
@@ -21,22 +39,6 @@ function dockerip() {
 #   fi
 #   docker exec -it dropbox_personal dropbox "$@"
 # }
-
-# OLD TMUX ALIASES ------------------------------------------------------------
-
-# function tmn() {
-#   if [[ $1 = "" ]]
-#   then
-#     tmux new-session
-#   elif [[ $1 = "." ]]
-#   then
-#     tmux new-session -s ${PWD##*/}
-#   else
-#     tmux new-session -s $1
-#   fi
-# }
-
-# alias tml='tmux list-sessions'
 
 # function tmuxadmin() {
 #   if [[ -n $(tmux list-sessions | grep "admin") ]]
