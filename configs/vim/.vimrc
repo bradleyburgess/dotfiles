@@ -39,6 +39,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'ianks/vim-tsx'
   Plug 'leafgarland/typescript-vim'
   Plug 'arzg/vim-sh'
+  Plug 'vim-ruby/vim-ruby'
 
   " AUTOCOMPLETE ETC
   Plug 'jiangmiao/auto-pairs'                           " Auto pairs
