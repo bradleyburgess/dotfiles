@@ -137,7 +137,7 @@ return {
       ["solargraph"] = function()
         lspconfig["solargraph"].setup({
           capabilities = capabilities,
-          filetypes = { "ruby", "eruby", "slim" },
+          filetypes = { "ruby" },
         })
       end,
       -- ["rubocop"] = function()
