@@ -1,5 +1,24 @@
 #!/bin/zsh
 
+function get_latest_nvim_tag() {
+  curl -s https://api.github.com/repos/neovim/neovim/releases/latest | grep 'html_url.*releases\/tag\/v' | cut -d : -f 2,3 | tr -d \" | tr -d , | rev | cut -d \/ -f 1 | rev
+}
+
+function get_local_nvim_version() {
+  nvim --version | head -n 1 | cut -d " " -f 2
+}
+
+function is_nvim_up_to_date() {
+  [[ $(get_latest_nvim_tag) == $(get_local_nvim_version) ]]
+}
+
+function download_latest_nvim_release() {
+  mkdir -p ~/temp && curl $(curl -s https://api.github.com/repos/neovim/neovim/releases/latest \
+    | grep 'browser_download_url.*appimage\"' \
+    | cut -d : -f 2,3 \
+    | tr -d \") -Lo ~/temp/nvim.appimage
+}
+
 # alias publicip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias publicip='ifconfig.me'
 alias reboot='systemctl reboot'
