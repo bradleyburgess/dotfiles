@@ -20,7 +20,7 @@ function download_latest_nvim_release() {
 }
 
 # alias publicip='dig +short myip.opendns.com @resolver1.opendns.com'
-alias publicip='ifconfig.me'
+alias publicip='curl ifconfig.me'
 alias reboot='systemctl reboot'
 alias shutdown='systemctl shutdown'
 alias suspend='systemctl suspend'
