@@ -28,7 +28,7 @@ export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
 source $ZSH_CONFIG_DIR/.zsh_aliases
 [[ -f ~/.zshrc_local ]] && source ~/.zshrc_local
-[[ -f "$ZSH_CONFIG_DIR/.zshrc_$(hostname") ]] && source $ZSH_CONFIG_DIR/.zshrc_$(hostname)
+[[ -f "$ZSH_CONFIG_DIR/.zshrc_$(hostname)" ]] && source $ZSH_CONFIG_DIR/.zshrc_$(hostname)
 alias ll='ls -lha'
 # -----------------------------------------------------------
 
