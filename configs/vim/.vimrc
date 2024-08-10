@@ -16,30 +16,21 @@ call plug#begin("~/.vim/plugged")
   " UNUSED
   
   " GENERAL
-  Plug 'ctrlpvim/ctrlp.vim'                               " Ctrl-P (like VS Code)
-  Plug 'tpope/vim-sensible'                           " Sensible defaults
+  Plug 'ctrlpvim/ctrlp.vim'                              " Ctrl-P (like VS Code)
+  Plug 'tpope/vim-sensible'                             " Sensible defaults
   Plug 'airblade/vim-rooter'                            " Project-based search
   Plug 'mbbill/undotree'                                " Undo tree
 
   " THEMES / UI
+  Plug 'joshdick/onedark.vim'
   Plug 'Yggdroot/indentLine'                            " Indent lines
   Plug 'itchyny/lightline.vim'                          " Lightline bar
-  Plug 'gruvbox-community/gruvbox'                      " Gruvbox (community)
-  Plug 'shinchu/lightline-gruvbox.vim'                  " Lightline gruvbox
 
   " LANGUAGE PACKS
-  Plug 'sheerun/vim-polyglot'                         " Language packs
-  Plug 'sersorrel/vim-lilypond'
   Plug 'plasticboy/vim-markdown'
   Plug 'elzr/vim-json'
   Plug 'kevinoid/vim-jsonc'
-  Plug 'cakebaker/scss-syntax.vim'                      " Sass
-  Plug 'jparise/vim-graphql'
-  Plug 'pangloss/vim-javascript'
-  Plug 'ianks/vim-tsx'
-  Plug 'leafgarland/typescript-vim'
   Plug 'arzg/vim-sh'
-  Plug 'vim-ruby/vim-ruby'
 
   " AUTOCOMPLETE ETC
   Plug 'jiangmiao/auto-pairs'                           " Auto pairs
@@ -47,7 +38,6 @@ call plug#begin("~/.vim/plugged")
   Plug 'tpope/vim-repeat'                               " Extended repeat func
   Plug 'tpope/vim-surround'                             " Surround
   Plug 'godlygeek/tabular'                              " Alignment
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
   " FILE MANAGEMENT
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }   " Fuzzy Finder
@@ -61,6 +51,7 @@ call plug#end()
 " ===================================================================
 filetype plugin indent on 
 set autowrite		           " Auto save before commands like :next and :make
+set autoread               " Auto reload files changed outside of ViM
 set encoding=utf-8         " UTF-8 encoding
 set hidden		             " Hide buffers when they are abandoned
 set nobackup               " No backup
@@ -110,27 +101,14 @@ set textwidth=80    " Default to textwidth of 80
 if (has("termguicolors"))
   set termguicolors
 endif
-colorscheme gruvbox
+colorscheme onedark
 set background=dark
 
 " From Primeagen
-let g:gruvbox_contrast_dark = 'hard'
 if exists('+termguicolors')
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
-
-" ===================================================================
-" LANGUAGE: JAVASCRIPT / TYPESCRIPT
-" ===================================================================
-" When entering JS files, rescan buffers for syntax
-au BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
-au BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
-
-" Read typescript files
-au BufNewFile,BufRead,BufEnter *.ts setlocal filetype=typescript
-au BufNewFile,BufRead,BufEnter *.ts setlocal indentexpr=GetTypescriptIndent()
-au BufNewFile,BufRead,BufEnter *.tsx setlocal filetype=typescriptreact
 
 " ===================================================================
 " LANGUAGE: JSON
@@ -244,7 +222,7 @@ let $FZF_DEFAULT_OPTS = '--reverse'
 " LIGHTLINE
 " ===================================================================
 let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
+      \ 'colorscheme': 'onedark',
       \ 'component_function': {
       \   'filename': 'FilenameForLightline'
       \ }
@@ -254,9 +232,3 @@ let g:lightline = {
 function! FilenameForLightline()
   return expand('%:p:h:t') . " / " . expand('%:t')
 endfunction
-
-" OTHER OPTIONS FOR FILENAME:
-" return expand('%:p:h:t') . " / " . expand('%:t')
-" return expand('%:t') . " (in " . expand('%:p:h:t') . ")"
-" return expand('%:p')
-
