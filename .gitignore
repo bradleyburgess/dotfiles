@@ -2,3 +2,5 @@
 private/
 .swp
 brother
+tmux-client-*.log
+tmux-server-*.log
