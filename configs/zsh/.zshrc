@@ -23,7 +23,7 @@ source $ZSH/oh-my-zsh.sh
 
 # USER CONFIG -----------------------------------------------
 export LANG=en_US.UTF-8
-export PATH=$PATH:/home/$USER/bin:/home/$USER/dotfiles/scripts
+export PATH=$PATH:/home/$USER/bin:/home/$USER/dotfiles/scripts:/home/$USER/.local/bin
 export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
 source $ZSH_CONFIG_DIR/.zsh_aliases
