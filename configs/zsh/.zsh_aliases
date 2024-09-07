@@ -47,6 +47,16 @@ function tmn() {
 
 alias tml='tmux list-sessions'
 
+function tma() {
+  if [[ $1 = "." ]]
+  then
+    NAME=${PWD##*/}
+  else
+    NAME=$1
+    tmux attach-session -t $NAME
+  fi
+}
+
 
 # OLD ALIASES ------------------------------------------------------------
 
