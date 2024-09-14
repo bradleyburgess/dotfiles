@@ -57,3 +57,6 @@ export PATH="/usr/local/texlive/2024/bin/x86_64-linux/:$PATH"
 
 # DEV: PHP --------------------------------------------------
 export PATH=$PATH:$HOME/.config/composer/vendor/bin
+
+# DEV: RUBY -------------------------------------------------
+[ -d ~/.rbenv ] && eval "$(~/.rbenv/bin/rbenv init - --no-rehash zsh)"
