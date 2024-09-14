@@ -43,7 +43,7 @@ return {
         "solargraph",
         "svelte",
         "tailwindcss",
-        "tsserver",
+        "ts_ls",
       },
     })
 
