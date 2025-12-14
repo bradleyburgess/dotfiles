@@ -1,0 +1,104 @@
+#!/bin/zsh
+
+function get_latest_nvim_tag() {
+  curl -s https://api.github.com/repos/neovim/neovim/releases/latest | grep 'html_url.*releases\/tag\/v' | cut -d : -f 2,3 | tr -d \" | tr -d , | rev | cut -d \/ -f 1 | rev
+}
+
+function get_local_nvim_version() {
+  nvim --version | head -n 1 | cut -d " " -f 2
+}
+
+function is_nvim_up_to_date() {
+  [[ $(get_latest_nvim_tag) == $(get_local_nvim_version) ]]
+}
+
+function download_latest_nvim_release() {
+  mkdir -p ~/temp && curl $(curl -s https://api.github.com/repos/neovim/neovim/releases/latest \
+    | grep 'browser_download_url.*appimage\"' \
+    | cut -d : -f 2,3 \
+    | tr -d \") -Lo ~/temp/nvim.appimage
+}
+
+# alias publicip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias publicip='curl ifconfig.me'
+alias reboot='systemctl reboot'
+alias shutdown='systemctl shutdown'
+alias suspend='systemctl suspend'
+
+function npmlatest() {
+  npm show $1 | grep latest
+}
+
+function dockerip() {
+  docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $1
+}
+
+function tmn() {
+  if [[ $1 = "" ]]
+  then
+    tmux new-session
+  elif [[ $1 = "." ]]
+  then
+    tmux new-session -s ${PWD##*/}
+  else
+    tmux new-session -s $1
+  fi
+}
+
+alias tml='tmux list-sessions'
+
+function tma() {
+  if [[ $1 = "." ]]
+  then
+    NAME=${PWD##*/}
+  else
+    NAME=$1
+    tmux attach-session -t $NAME
+  fi
+}
+
+
+# OLD ALIASES ------------------------------------------------------------
+
+# function dropbox() {
+#   if [[ -z $1 ]]
+#   then
+#     echo "No arguments supplied."
+#     return 1
+#   fi
+#   docker exec -it dropbox_personal dropbox "$@"
+# }
+
+# function tmuxadmin() {
+#   if [[ -n $(tmux list-sessions | grep "admin") ]]
+#   then
+#     tmux attach-session -t admin
+#   else
+#     tmux new-session -d -s admin
+#     tmux rename-window -t admin:1 htop
+#     tmux select-window -t admin:1
+#     tmux send -t admin:1 htop ENTER
+#     tmux attach -t admin
+#   fi
+# }
+
+# function tmuxdev() {
+#   DIRECTORY=${PWD##*/}
+#   if [[ -n $(tmux list-sessions | grep "${DIRECTORY} :") ]]
+#   then
+#     printf "Tmux session ${DIRECTORY} already exists! Exiting."
+#     tmux attach-session -t ${DIRECTORY}
+#   else
+#     xdotool key super+s
+#     tmux new-session -d -s ${DIRECTORY}
+#     tmux rename-window -t ${DIRECTORY}:1 dev-server
+#     tmux new-window -t ${DIRECTORY} -a -n "git/bash"
+#     tmux new-window -t ${DIRECTORY} -a -n "ranger"
+#     tmux send -t ${DIRECTORY}:ranger ranger ENTER
+#     tmux send -t ${DIRECTORY}:dev-server code Space . ENTER
+#     tmux select-window -t ${DIRECTORY}:dev-server
+#     tmux attach -t ${DIRECTORY}
+#     xdotool key super+w
+#     xdotool search --name "Visual Studio Code" windowfocus
+#   fi
+# }
